@@ -20,6 +20,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 .card {
   background-color: #181a1b;
 }
