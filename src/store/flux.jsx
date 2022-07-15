@@ -25,10 +25,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-      getPlanetas: async () => {
+      getPlanetas: async url => {
         try {
-          const url = 'https://swapi.dev/api/planets/';
-
           const response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -41,10 +39,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-      getVehiculos: async () => {
+      getVehiculos: async url => {
         try {
-          const url = 'https://swapi.dev/api/vehicles/';
-
           const response = await fetch(url, {
             method: 'GET',
             headers: {
