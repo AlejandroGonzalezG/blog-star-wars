@@ -7,6 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       characters: null,
+      planetas: null,
+      vehiculos: null,
     },
     actions: {
       getCharacters: async () => {
@@ -25,6 +27,38 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
+      getPlanetas: async () => {
+        try {
+          const url = 'https://swapi.dev/api/planets/';
+
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          const data = await response.json();
+          setStore({ planetas: data });
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      getVehiculos: async () => {
+        try {
+          const url = 'https://swapi.dev/api/vehicles/';
+
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          const data = await response.json();
+          setStore({ vehiculos: data });
+        } catch (error) {
+          console.log(error);
+        }
+      }
     },
   };
 };

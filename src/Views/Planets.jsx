@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../store/appContext';
 
 
 const estiloCard = {
@@ -7,6 +8,10 @@ const estiloCard = {
 
 
 const Planets = () => {
+
+  const { store, actions } = useContext(Context);
+
+  console.log(store)
   return (
     <div className='container'>
       <div className="card mb-3" style={estiloCard}>
@@ -16,7 +21,7 @@ const Planets = () => {
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">{store.planetas.results[1].name}</h5>
               <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
             </div>
