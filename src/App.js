@@ -12,13 +12,15 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/category/people" element={<People />} />
-          <Route path="/category/vehicles" element={<Vehicles />} />
-          <Route path="/category/planets" element={<Planets />} />
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/category/people" element={<People />} />
+            <Route path="/category/vehicles" element={<Vehicles />} />
+            <Route path="/category/planets" element={<Planets />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   );
