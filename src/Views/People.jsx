@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import Card from '../Components/Card';
 import { Context } from '../store/appContext';
-import PeopleCard from '../Components/PeopleCard.jsx'
+import PeopleCard from '../Components/PeopleCard.jsx';
 
 const estiloCard = {
   width: '100%',
@@ -34,13 +34,11 @@ const People = () => {
       <div className="container">
         <div className="card mb-3" style={estiloCard}>
           <div className="row g-0">
-            {
-              !!store.characters &&
+            {!!store.characters &&
               store.characters.results.length > 0 &&
-              store.characters.results.map((item,) => (
+              store.characters.results.map(item => (
                 <PeopleCard {...item} key={item.name} />
-              ))
-            }
+              ))}
           </div>
         </div>
       </div>
