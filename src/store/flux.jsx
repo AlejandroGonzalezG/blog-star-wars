@@ -21,7 +21,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           const data = await response.json();
           setStore({ characters: data });
-          console.log(data);
         } catch (error) {
           console.log(error);
         }
