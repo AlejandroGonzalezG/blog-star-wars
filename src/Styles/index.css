@@ -11,10 +11,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1f1d1d;
+  background-color: #1b1b1b;
+  color: #d1cdc7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  background-color: #181a1b;
+}
+
+.card:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.btn-primary {
+  margin-right: 5rem;
+}
+
+.btn-secondary:hover,
+.fa-heart:hover {
+  color: #6c757d;
+  background-color: white;
+}
+
+.btn-secondary:hover {
+  border: 1px solid white;
 }

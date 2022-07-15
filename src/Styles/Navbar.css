@@ -1,8 +1,12 @@
+.navbar {
+  background-color: #171819;
+}
+
 a {
   color: white !important;
 }
 
 .active {
-  color: #2563eb !important;
+  color: #3993ec !important;
   font-weight: 600 !important;
 }

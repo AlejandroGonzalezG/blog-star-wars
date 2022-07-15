@@ -3,7 +3,7 @@ import '../Styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg">
       <div className="container">
         <NavLink
           className={({ isActive }) =>
