@@ -6,7 +6,7 @@ export const Context = createContext(null);
 
 // This function injects the global store to any view/component where you want to use it, we will inject the context to layout.js, you can see it here:
 // https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/js/layout.js#L35
-const injectContext = Component => {
+const injectContext = PassedComponent => {
   const StoreWrapper = props => {
     /*
 		getStore returns everything that is inside the attribute store
@@ -42,7 +42,7 @@ const injectContext = Component => {
     // on the state of this component
     return (
       <Context.Provider value={state}>
-        <Component {...props} />
+        <PassedComponent {...props} />
       </Context.Provider>
     );
   };

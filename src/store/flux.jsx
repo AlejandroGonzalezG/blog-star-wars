@@ -11,15 +11,17 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       getCharacters: async () => {
         try {
-          const response = await fetch('https://swapi.dev/api/', {
+          const url = 'https://swapi.dev/api/people/';
+
+          const response = await fetch(url, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
             },
           });
           const data = await response.json();
-          console.log(data);
           setStore({ characters: data });
+          console.log(data);
         } catch (error) {
           console.log(error);
         }
