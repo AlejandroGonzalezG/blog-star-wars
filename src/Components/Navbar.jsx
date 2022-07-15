@@ -1,12 +1,18 @@
 import { NavLink } from 'react-router-dom';
+import '../Styles/Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? 'navbar-brand active' : 'navbar-brand'
+          }
+          to="/"
+        >
           Star Wars
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,19 +27,35 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+                aria-current="page"
+                to="/category/people"
+              >
                 People
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+                to="/category/vehicles"
+              >
                 Vehicles
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+                to="/category/planets"
+              >
                 Planets
-              </a>
+              </NavLink>
             </li>
           </ul>
           <form className="d-flex" role="search">
