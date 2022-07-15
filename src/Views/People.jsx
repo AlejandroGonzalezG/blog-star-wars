@@ -36,8 +36,8 @@ const People = () => {
           <div className="row g-0">
             {!!store.characters &&
               store.characters.results.length > 0 &&
-              store.characters.results.map(item => (
-                <PeopleCard {...item} key={item.name} />
+              store.characters.results.map((item, i) => (
+                <PeopleCard {...item} key={item.name} index={i} />
               ))}
           </div>
         </div>

@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const PlanetsCard = ({ name, diameter, climate, population }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -20,9 +18,9 @@ const PlanetsCard = ({ name, diameter, climate, population }) => {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <ul className="person-details">
-            <li>{diameter}</li>
-            <li>{climate}</li>
-            <li>{population}</li>
+            <li>Diameter: {diameter}</li>
+            <li>Climate: {climate}</li>
+            <li>Population: {population}</li>
           </ul>
           <div className="btns-container d-flex">
             <Link to="/" className="btn btn-primary">
