@@ -25,7 +25,7 @@ const injectContext = PassedComponent => {
     );
 
     useEffect(() => {
-      state.actions.getCharacters();
+      state.actions.getCharacters('https://swapi.dev/api/people/');
       state.actions.getPlanetas();
       state.actions.getVehiculos();
       /**

@@ -11,10 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       vehiculos: null,
     },
     actions: {
-      getCharacters: async () => {
+      getCharacters: async url => {
         try {
-          const url = 'https://swapi.dev/api/people/';
-
           const response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -58,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log(error);
         }
-      }
+      },
     },
   };
 };
