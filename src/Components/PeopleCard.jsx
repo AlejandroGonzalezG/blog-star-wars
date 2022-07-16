@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 const PeopleCard = ({ name, height, mass, gender, index }) => {
   const [isActive, setIsActive] = useState(false);
 
+  // Gets first part of name until any white space
+  const firstName = name.split(' ')[0];
+
   const handleClick = () => {
     setIsActive(!isActive);
   };
@@ -22,7 +25,12 @@ const PeopleCard = ({ name, height, mass, gender, index }) => {
             <li>Gender: {gender}</li>
           </ul>
           <div className="btns-container d-flex">
-            <Link to={`details/${index}`} className="btn btn-primary">
+            {/* <Link to={`details/${index}`} className="btn btn-primary">
+              Learn More!
+            </Link> */}
+            {/* !!!! Instead of working with the index, the link is working with the
+            firstName var !!! */}
+            <Link to={`details/${firstName}`} className="btn btn-primary">
               Learn More!
             </Link>
             {isActive ? (
