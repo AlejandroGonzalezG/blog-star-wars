@@ -6,7 +6,7 @@ import Home from './Views/Home';
 import People from './Views/People';
 import Vehicles from './Views/Vehicles';
 import Planets from './Views/Planets';
-import Details from './Views/Details';
+import DetailsPeople from './Views/DetailsPeople';
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
             <Route path="/category/planets" element={<Planets />} />
             <Route
               path="/category/people/details/:index"
-              element={<Details />}
+              element={<DetailsPeople />}
             />
           </Routes>
         </div>
