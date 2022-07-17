@@ -9,9 +9,10 @@ export const Context = createContext(null);
 const injectContext = PassedComponent => {
   const StoreWrapper = props => {
     /*
-		getStore returns everything that is inside the attribute store
-		getActions returns everything that is inside the actions store
-	*/
+    getStore returns everything that is inside the attribute store
+    getActions returns everything that is inside the actions store
+  */
+    
     const [state, setState] = useState(
       getState({
         getStore: () => state.store,
@@ -43,7 +44,7 @@ const injectContext = PassedComponent => {
     // the context will now have a getStore, getActions and setStore functions available, because they were declared
     // on the state of this component
     return (
-      <Context.Provider value={state}>
+      <Context.Provider value={state }>
         <PassedComponent {...props} />
       </Context.Provider>
     );

@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import Card from '../Components/Card';
 import { Context } from '../store/appContext';
 import PeopleCard from '../Components/PeopleCard.jsx';
-
+ 
 const estiloCard = {
   width: '100%',
 };
 
-const People = () => {
+const People = ({identificador, setIdentificador}) => {
   const { store, actions } = useContext(Context);
   return (
     <>
@@ -37,7 +37,7 @@ const People = () => {
             {!!store.characters &&
               store.characters.results.length > 0 &&
               store.characters.results.map((item, i) => (
-                <PeopleCard {...item} key={item.name} index={i} />
+                <PeopleCard {...item} key={item.name} index={i} identificador={identificador} setIdentificador={setIdentificador} />
               ))}
           </div>
         </div>

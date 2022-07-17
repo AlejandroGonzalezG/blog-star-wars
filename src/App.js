@@ -7,8 +7,11 @@ import People from './Views/People';
 import Vehicles from './Views/Vehicles';
 import Planets from './Views/Planets';
 import DetailsPeople from './Views/DetailsPeople';
+import { useState } from 'react';
 
 const App = () => {
+
+  const [identificador, setIdentificador] = useState(null)
   return (
     <>
       <BrowserRouter>
@@ -17,12 +20,12 @@ const App = () => {
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
-            <Route path="/category/people" element={<People />} />
-            <Route path="/category/vehicles" element={<Vehicles />} />
-            <Route path="/category/planets" element={<Planets />} />
+            <Route path="/category/people" element={<People identificador={identificador} setIdentificador={setIdentificador}/> } />
+            <Route path="/category/vehicles" element={<Vehicles identificador={identificador} setIdentificador={setIdentificador}/>} />
+            <Route path="/category/planets" element={<Planets identificador={identificador} setIdentificador={setIdentificador}/>} />
             <Route
               path="/category/people/details/:index"
-              element={<DetailsPeople />}
+              element={<DetailsPeople identificador={identificador} setIdentificador={setIdentificador}/>}
             />
           </Routes>
         </div>
