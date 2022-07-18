@@ -10,18 +10,18 @@ const estiloDiv2 = {
   padding: "2px"
 }
 
-const DetailsPeople = ({ identificador }) => {
+const DetailsPlanetas = ({ identificador2 }) => {
   const { store } = useContext(Context);
   return (
     <>
       <div className="card mb-3" style={estiloDiv}>
         <div className="row g-0">
           <div className="col-md-8">
-            <img src="https://muyadictivo.com/wp-content/uploads/2021/05/mejor-momento-de-luke-skywalker.jpg" className="img-fluid rounded-start" alt="..."></img>
+            <img src="https://static.wikia.nocookie.net/esstarwars/images/3/34/Lothal_Full_Planet.png" className="img-fluid rounded-start" alt="..."></img>
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h5 className="card-title">{store?.characters?.results[identificador].name}</h5>
+              <h5 className="card-title">{store?.planetas.results[identificador2].name}</h5>
               <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, velit beatae qui ab nam saepe tempore assumenda in necessitatibus tempora quasi voluptates commodi. Eum dolore dolorem maxime, veniam molestias maiores!</p>
             </div>
           </div>
@@ -29,60 +29,63 @@ const DetailsPeople = ({ identificador }) => {
         <div className="container" style={estiloDiv2}>
           <div className="row">
             <div className="col-1">
-              <h6>Dimensions</h6>
+              <h6>Rotation Period</h6>
               <div>
-                Height: {store?.characters?.results[identificador].height} <br></br>
-                Mass: {store?.characters?.results[identificador].mass}
+                {store?.planetas?.results[identificador2].rotation_period}
               </div>
             </div>
             <div className="col-1">
-              <h6>Physical characteristics</h6>
+              <h6>Orbital Period</h6>
               <div>
-                Hair Color: {store?.characters?.results[identificador].hair_color} <br></br>
-                Skin Color: {store?.characters?.results[identificador].skin_color} <br></br>
-                Eye Color: {store?.characters?.results[identificador].eye_color} <br></br>
+                {store?.planetas?.results[identificador2].orbital_period}
               </div>
             </div>
             <div className="col-1">
-              <h6>Birth Year</h6>
+              <h6>Diameter</h6>
               <div>
-                {store?.characters?.results[identificador].birth_year}
+                {store?.planetas?.results[identificador2].diameter}
               </div>
             </div>
             <div className="col-1">
-              <h6>Gender</h6>
+              <h6>Climate</h6>
               <div>
-                {store?.characters?.results[identificador].gender}
+                {store?.planetas?.results[identificador2].climate}
               </div>
             </div>
             <div className="col-1">
-              <h6>HomeWorld</h6>
+              <h6>Gravity</h6>
               <div>
-                {store?.characters?.results[identificador].homeworld}
+                {store?.planetas?.results[identificador2].gravity}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Terrain</h6>
+              <div>
+                {store?.planetas?.results[identificador2].terrain}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Surface Water</h6>
+              <div>
+                {store?.planetas?.results[identificador2].surface_water}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Population</h6>
+              <div>
+                {store?.planetas?.results[identificador2].population}
+              </div>
+            </div>
+            <div className="col-2">
+              <h6>Residents</h6>
+              <div>
+                {store?.planetas?.results[identificador2].residents}
               </div>
             </div>
             <div className="col-2">
               <h6>Films</h6>
               <div>
-                {store?.characters?.results[identificador].films}
-              </div>
-            </div>
-            <div className="col-1">
-              <h6>Species</h6>
-              <div>
-                {store?.characters?.results[identificador].species}
-              </div>
-            </div>
-            <div className="col-2">
-              <h6>Vehicles</h6>
-              <div>
-                {store?.characters?.results[identificador].vehicles}
-              </div>
-            </div>
-            <div className="col-2">
-              <h6>StarShips</h6>
-              <div>
-                {store?.characters?.results[identificador].starships}
+                {store?.planetas?.results[identificador2].films}
               </div>
             </div>
           </div>
@@ -92,4 +95,4 @@ const DetailsPeople = ({ identificador }) => {
   );
 };
 
-export default DetailsPeople;
+export default DetailsPlanetas;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const VehicleCard = ({ name, model, manufacturer, vehicle_class }) => {
+const VehicleCard = ({ name, model, manufacturer, vehicle_class, setIdentificador3, index }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -23,7 +23,7 @@ const VehicleCard = ({ name, model, manufacturer, vehicle_class }) => {
             <li>Class: {vehicle_class}</li>
           </ul>
           <div className="btns-container d-flex">
-            <Link to="/" className="btn btn-primary">
+            <Link to={`details/${index}`} className="btn btn-primary" onClickCapture={() => setIdentificador3(index)}>
               Learn More!
             </Link>
             {isActive ? (

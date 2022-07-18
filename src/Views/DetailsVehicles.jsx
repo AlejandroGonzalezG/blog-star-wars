@@ -10,7 +10,7 @@ const estiloDiv2 = {
   padding: "2px"
 }
 
-const DetailsPeople = ({ identificador }) => {
+const DetailsVehiculos = ({ identificador3 }) => {
   const { store } = useContext(Context);
   return (
     <>
@@ -21,7 +21,7 @@ const DetailsPeople = ({ identificador }) => {
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h5 className="card-title">{store?.characters?.results[identificador].name}</h5>
+              <h5 className="card-title">{store?.vehiculos?.results[identificador3].name}</h5>
               <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, velit beatae qui ab nam saepe tempore assumenda in necessitatibus tempora quasi voluptates commodi. Eum dolore dolorem maxime, veniam molestias maiores!</p>
             </div>
           </div>
@@ -29,60 +29,75 @@ const DetailsPeople = ({ identificador }) => {
         <div className="container" style={estiloDiv2}>
           <div className="row">
             <div className="col-1">
-              <h6>Dimensions</h6>
+              <h6>Model</h6>
               <div>
-                Height: {store?.characters?.results[identificador].height} <br></br>
-                Mass: {store?.characters?.results[identificador].mass}
+                {store?.vehiculos?.results[identificador3].model}
               </div>
             </div>
             <div className="col-1">
-              <h6>Physical characteristics</h6>
+              <h6>Manufacturer</h6>
               <div>
-                Hair Color: {store?.characters?.results[identificador].hair_color} <br></br>
-                Skin Color: {store?.characters?.results[identificador].skin_color} <br></br>
-                Eye Color: {store?.characters?.results[identificador].eye_color} <br></br>
+                {store?.vehiculos?.results[identificador3].manufacturer}
               </div>
             </div>
             <div className="col-1">
-              <h6>Birth Year</h6>
+              <h6>Cost in Credits</h6>
               <div>
-                {store?.characters?.results[identificador].birth_year}
+                {store?.vehiculos?.results[identificador3].cost_in_credits}
               </div>
             </div>
             <div className="col-1">
-              <h6>Gender</h6>
+              <h6>Length</h6>
               <div>
-                {store?.characters?.results[identificador].gender}
+                {store?.vehiculos?.results[identificador3].length}
               </div>
             </div>
             <div className="col-1">
-              <h6>HomeWorld</h6>
+              <h6>Max Atmosphering Speed</h6>
               <div>
-                {store?.characters?.results[identificador].homeworld}
+                {store?.vehiculos?.results[identificador3].max_atmosphering_speed}
               </div>
             </div>
-            <div className="col-2">
+            <div className="col-1">
+              <h6>Crew</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].crew}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Passengers</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].passengers}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Cargo Capacity</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].cargo_capacity}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Consumables</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].consumables}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Vehicle Class</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].vehicle_class}
+              </div>
+            </div>
+            <div className="col-1">
+              <h6>Pilots</h6>
+              <div>
+                {store?.vehiculos?.results[identificador3].pilots}
+              </div>
+            </div>
+            <div className="col-1">
               <h6>Films</h6>
               <div>
-                {store?.characters?.results[identificador].films}
-              </div>
-            </div>
-            <div className="col-1">
-              <h6>Species</h6>
-              <div>
-                {store?.characters?.results[identificador].species}
-              </div>
-            </div>
-            <div className="col-2">
-              <h6>Vehicles</h6>
-              <div>
-                {store?.characters?.results[identificador].vehicles}
-              </div>
-            </div>
-            <div className="col-2">
-              <h6>StarShips</h6>
-              <div>
-                {store?.characters?.results[identificador].starships}
+                {store?.vehiculos?.results[identificador3].films}
               </div>
             </div>
           </div>
@@ -92,4 +107,4 @@ const DetailsPeople = ({ identificador }) => {
   );
 };
 
-export default DetailsPeople;
+export default DetailsVehiculos;

@@ -8,11 +8,10 @@ const estiloCard = {
 }
 
 
-const Planets = () => {
+const Planets = ({identificador2, setIdentificador2}) => {
 
   const { store, actions } = useContext(Context);
 
-  console.log(store)
   return (
     <>
       <div className="container d-flex align-items-center justify-content-center">
@@ -40,8 +39,8 @@ const Planets = () => {
             {
               !!store.planetas &&
               store.planetas.results.length > 0 &&
-              store.planetas.results.map((item,) => (
-                <PlanetsCard {...item} key={item.name} />
+              store.planetas.results.map((item, i) => (
+                <PlanetsCard {...item} key={item.name} index={i} identificador2={identificador2} setIdentificador2={setIdentificador2}/>
               ))
             }
           </div>
@@ -52,3 +51,4 @@ const Planets = () => {
 };
 
 export default Planets;
+ 
