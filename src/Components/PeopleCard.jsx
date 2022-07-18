@@ -11,11 +11,21 @@ const PeopleCard = ({
   index,
   identificador,
   setIdentificador,
+  todos,
+  setTodos,
+  inputValue,
+  setInputValue,
+  textHandler,
+  addTodo,
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
+
+  const handleClickAdd = () => {
     setIsActive(!isActive);
+    textHandler({ name });
+    addTodo({ name });
   };
+
   return (
     <>
       <div className="card" style={{ width: '18rem' }} id={index}>
@@ -40,11 +50,11 @@ const PeopleCard = ({
               Learn More!
             </Link>
             {isActive ? (
-              <button className="btn btn-secondary" onClick={handleClick}>
+              <button className="btn btn-secondary" onClick={handleClickAdd}>
                 <i className="fa-solid fa-heart"></i>
               </button>
             ) : (
-              <button className="btn btn-secondary" onClick={handleClick}>
+              <button className="btn btn-secondary" onClick={handleClickAdd}>
                 <i className="fa-regular fa-heart"></i>
               </button>
             )}

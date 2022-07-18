@@ -8,6 +8,10 @@ import VehicleCard from '../Components/VehicleCard';
 import '../Styles/Home.css';
 
 const Home = ({
+  todos,
+  setTodos,
+  inputValue,
+  setInputValue,
   identificador,
   setIdentificador,
   identificador2,
@@ -16,6 +20,23 @@ const Home = ({
   setIdentificador3,
 }) => {
   const { store, actions } = useContext(Context);
+  // Events functions
+
+  const textHandler = name => {
+    // Grab the text of the input and set it to the inputValue state
+    setInputValue(name);
+  };
+
+  const addTodo = name => {
+    // When button clicked, add todo to an object with its text and an id
+    setTodos([
+      ...todos,
+      {
+        text: name,
+        id: Math.round(Math.random() * 1000),
+      },
+    ]);
+  };
 
   return (
     <>
@@ -38,6 +59,12 @@ const Home = ({
                   index={i}
                   identificador={identificador}
                   setIdentificador={setIdentificador}
+                  inputValue={inputValue}
+                  setInputValue={setInputValue}
+                  todos={todos}
+                  setTodos={setTodos}
+                  textHandler={textHandler}
+                  addTodo={addTodo}
                 />
               ))}
         </div>

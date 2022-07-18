@@ -12,6 +12,9 @@ import DetailsVehicles from './Views/DetailsVehicles';
 import { useState } from 'react';
 
 const App = () => {
+  // States
+  const [inputValue, setInputValue] = useState('');
+  const [todos, setTodos] = useState([]);
   const [identificador, setIdentificador] = useState(null);
   const [identificador2, setIdentificador2] = useState(null);
   const [identificador3, setIdentificador3] = useState(null);
@@ -26,6 +29,10 @@ const App = () => {
               path="/"
               element={
                 <Home
+                  inputValue={inputValue}
+                  setInputValue={setInputValue}
+                  todos={todos}
+                  setTodos={setTodos}
                   identificador={identificador}
                   setIdentificador={setIdentificador}
                   identificador2={identificador2}
