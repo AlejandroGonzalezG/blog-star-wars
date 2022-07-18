@@ -7,8 +7,8 @@ import People from './Views/People';
 import Vehicles from './Views/Vehicles';
 import Planets from './Views/Planets';
 import DetailsPeople from './Views/DetailsPeople';
-import DetailsPlanetas from './Views/DetailsPlanets';
-import DetailsVehiculos from './Views/DetailsVehicles';
+import DetailsPlanets from './Views/DetailsPlanets';
+import DetailsVehicles from './Views/DetailsVehicles';
 import { useState } from 'react';
 
 const App = () => {
@@ -82,32 +82,43 @@ const App = () => {
                 />
               }
             />
-            {/* Home Component Route to DetailsPlanetas */}
+            {/* Home Component Route to DetailsVehicles */}
+            <Route
+              path="details/vehicle/:index"
+              element={
+                <DetailsVehicles
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
+                />
+              }
+            />
+            {/* VehicleCard Component Route to DetailsVehicles */}
+            <Route
+              path="/category/vehicles/details/vehicle/:index"
+              element={
+                <DetailsVehicles
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
+                />
+              }
+            />
+            {/* Home Component Route to DetailsPlanets */}
             <Route
               path="/details/planet/:index"
               element={
-                <DetailsPlanetas
+                <DetailsPlanets
                   identificador2={identificador2}
                   setIdentificador2={setIdentificador2}
                 />
               }
             />
-            {/* PlanetsCard Component Route to DetailsPeople */}
+            {/* PlanetsCard Component Route to DetailsPlanets */}
             <Route
               path="/category/planets/details/planet/:index"
               element={
-                <DetailsPlanetas
+                <DetailsPlanets
                   identificador2={identificador2}
                   setIdentificador2={setIdentificador2}
-                />
-              }
-            />
-            <Route
-              path="/category/vehicles/details/:index"
-              element={
-                <DetailsVehiculos
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
                 />
               }
             />

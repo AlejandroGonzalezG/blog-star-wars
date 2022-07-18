@@ -4,6 +4,7 @@ import Card from '../Components/Card';
 import { Context } from '../store/appContext';
 import PeopleCard from '../Components/PeopleCard.jsx';
 import PlanetsCard from '../Components/PlanetsCard.jsx';
+import VehicleCard from '../Components/VehicleCard';
 import '../Styles/Home.css';
 
 const Home = ({
@@ -49,10 +50,19 @@ const Home = ({
           </button>
         </div>
         <div className="d-flex">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {!!store.vehiculos &&
+            store.vehiculos.results.length > 0 &&
+            store.vehiculos.results
+              .filter((item, index, obj) => index <= 3)
+              .map((item, i) => (
+                <VehicleCard
+                  {...item}
+                  key={item.name}
+                  index={i}
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
+                />
+              ))}
         </div>
       </div>
       <div className="planets mt-5">
