@@ -3,9 +3,17 @@ import { Link } from 'react-router-dom';
 import Card from '../Components/Card';
 import { Context } from '../store/appContext';
 import PeopleCard from '../Components/PeopleCard.jsx';
+import PlanetsCard from '../Components/PlanetsCard.jsx';
 import '../Styles/Home.css';
 
-const Home = ({ identificador, setIdentificador }) => {
+const Home = ({
+  identificador,
+  setIdentificador,
+  identificador2,
+  setIdentificador2,
+  identificador3,
+  setIdentificador3,
+}) => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -31,18 +39,6 @@ const Home = ({ identificador, setIdentificador }) => {
                   setIdentificador={setIdentificador}
                 />
               ))}
-          {/* {!!store.characters &&
-            store.characters.results.length > 0 &&
-            store.characters.results.filter((item, index, obj) => index <= 3)} */}
-          {/* map((item, i) => (
-          <PeopleCard
-            {...item}
-            key={item.name}
-            index={i}
-            identificador={identificador}
-            setIdentificador={setIdentificador}
-          />
-          ))} */}
         </div>
       </div>
       <div className="vehicles mt-5">
@@ -67,10 +63,19 @@ const Home = ({ identificador, setIdentificador }) => {
           </button>
         </div>
         <div className="d-flex">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {!!store.planetas &&
+            store.planetas.results.length > 0 &&
+            store.planetas.results
+              .filter((item, index, obj) => index <= 3)
+              .map((item, i) => (
+                <PlanetsCard
+                  {...item}
+                  key={item.name}
+                  index={i}
+                  identificador2={identificador2}
+                  setIdentificador2={setIdentificador2}
+                />
+              ))}
         </div>
       </div>
     </>

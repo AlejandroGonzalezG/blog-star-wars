@@ -28,6 +28,10 @@ const App = () => {
                 <Home
                   identificador={identificador}
                   setIdentificador={setIdentificador}
+                  identificador2={identificador2}
+                  setIdentificador2={setIdentificador2}
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
                 />
               }
             />
@@ -58,6 +62,7 @@ const App = () => {
                 />
               }
             />
+            {/* Home Component Route to DetailsPeople */}
             <Route
               path="/details/:index"
               element={
@@ -67,6 +72,7 @@ const App = () => {
                 />
               }
             />
+            {/* People Component Route to DetailsPeople */}
             <Route
               path="/category/people/details/:index"
               element={
@@ -76,8 +82,18 @@ const App = () => {
                 />
               }
             />
+            {/* Home Component Route to DetailsPlanetas */}
             <Route
-              path="/category/planets/details/:index"
+              path="/details/planet/:index"
+              element={
+                <DetailsPlanetas
+                  identificador2={identificador2}
+                  setIdentificador2={setIdentificador2}
+                />
+              }
+            />
+            <Route
+              path="/category/planets/details/planet/:index"
               element={
                 <DetailsPlanetas
                   identificador2={identificador2}
