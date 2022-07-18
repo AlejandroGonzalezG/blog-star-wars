@@ -2,9 +2,10 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../Components/Card';
 import { Context } from '../store/appContext';
+import PeopleCard from '../Components/PeopleCard.jsx';
 import '../Styles/Home.css';
 
-const Home = () => {
+const Home = ({ identificador, setIdentificador }) => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -17,10 +18,31 @@ const Home = () => {
           </button>
         </div>
         <div className="d-flex">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {!!store.characters &&
+            store.characters.results.length > 0 &&
+            store.characters.results
+              .filter((item, index, obj) => index <= 3)
+              .map((item, i) => (
+                <PeopleCard
+                  {...item}
+                  key={item.name}
+                  index={i}
+                  identificador={identificador}
+                  setIdentificador={setIdentificador}
+                />
+              ))}
+          {/* {!!store.characters &&
+            store.characters.results.length > 0 &&
+            store.characters.results.filter((item, index, obj) => index <= 3)} */}
+          {/* map((item, i) => (
+          <PeopleCard
+            {...item}
+            key={item.name}
+            index={i}
+            identificador={identificador}
+            setIdentificador={setIdentificador}
+          />
+          ))} */}
         </div>
       </div>
       <div className="vehicles mt-5">

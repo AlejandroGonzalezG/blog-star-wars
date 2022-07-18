@@ -12,10 +12,9 @@ import DetailsVehiculos from './Views/DetailsVehicles';
 import { useState } from 'react';
 
 const App = () => {
-
   const [identificador, setIdentificador] = useState(null);
   const [identificador2, setIdentificador2] = useState(null);
-  const [identificador3, setIdentificador3] = useState(null)
+  const [identificador3, setIdentificador3] = useState(null);
   return (
     <>
       <BrowserRouter>
@@ -23,21 +22,77 @@ const App = () => {
         <div className="container">
           <Routes>
             <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/category/people" element={<People identificador={identificador} setIdentificador={setIdentificador}/> } />
-            <Route path="/category/planets" element={<Planets identificador2={identificador2} setIdentificador2={setIdentificador2}/>} />
-            <Route path="/category/vehicles" element={<Vehicles identificador3={identificador3} setIdentificador3={setIdentificador3}/>} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  identificador={identificador}
+                  setIdentificador={setIdentificador}
+                />
+              }
+            />
+            <Route
+              path="/category/people"
+              element={
+                <People
+                  identificador={identificador}
+                  setIdentificador={setIdentificador}
+                />
+              }
+            />
+            <Route
+              path="/category/planets"
+              element={
+                <Planets
+                  identificador2={identificador2}
+                  setIdentificador2={setIdentificador2}
+                />
+              }
+            />
+            <Route
+              path="/category/vehicles"
+              element={
+                <Vehicles
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
+                />
+              }
+            />
+            <Route
+              path="/details/:index"
+              element={
+                <DetailsPeople
+                  identificador={identificador}
+                  setIdentificador={setIdentificador}
+                />
+              }
+            />
             <Route
               path="/category/people/details/:index"
-              element={<DetailsPeople identificador={identificador} setIdentificador={setIdentificador}/>}
+              element={
+                <DetailsPeople
+                  identificador={identificador}
+                  setIdentificador={setIdentificador}
+                />
+              }
             />
             <Route
               path="/category/planets/details/:index"
-              element={<DetailsPlanetas identificador2={identificador2} setIdentificador2={setIdentificador2}/>}
+              element={
+                <DetailsPlanetas
+                  identificador2={identificador2}
+                  setIdentificador2={setIdentificador2}
+                />
+              }
             />
             <Route
               path="/category/vehicles/details/:index"
-              element={<DetailsVehiculos identificador3={identificador3} setIdentificador3={setIdentificador3}/>}
+              element={
+                <DetailsVehiculos
+                  identificador3={identificador3}
+                  setIdentificador3={setIdentificador3}
+                />
+              }
             />
           </Routes>
         </div>

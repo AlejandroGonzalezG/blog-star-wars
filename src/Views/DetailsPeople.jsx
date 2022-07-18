@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import PeopleCard from "../Components/PeopleCard.jsx"
-import { Context } from "../store/appContext";
+import { useContext } from 'react';
+import PeopleCard from '../Components/PeopleCard.jsx';
+import { Context } from '../store/appContext';
 
 const estiloDiv = {
-  margin: "15px"
-}
+  margin: '15px',
+};
 const estiloDiv2 = {
-  marginTop: "30px",
-  padding: "2px"
-}
+  marginTop: '30px',
+  padding: '2px',
+};
 
 const DetailsPeople = ({ identificador }) => {
   const { store } = useContext(Context);
@@ -17,12 +17,23 @@ const DetailsPeople = ({ identificador }) => {
       <div className="card mb-3" style={estiloDiv}>
         <div className="row g-0">
           <div className="col-md-8">
-            <img src="https://muyadictivo.com/wp-content/uploads/2021/05/mejor-momento-de-luke-skywalker.jpg" className="img-fluid rounded-start" alt="..."></img>
+            <img
+              src="https://muyadictivo.com/wp-content/uploads/2021/05/mejor-momento-de-luke-skywalker.jpg"
+              className="img-fluid rounded-start"
+              alt="..."
+            ></img>
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h5 className="card-title">{store?.characters?.results[identificador].name}</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, velit beatae qui ab nam saepe tempore assumenda in necessitatibus tempora quasi voluptates commodi. Eum dolore dolorem maxime, veniam molestias maiores!</p>
+              <h5 className="card-title">
+                {store?.characters?.results[identificador].name}
+              </h5>
+              <p className="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+                velit beatae qui ab nam saepe tempore assumenda in
+                necessitatibus tempora quasi voluptates commodi. Eum dolore
+                dolorem maxime, veniam molestias maiores!
+              </p>
             </div>
           </div>
         </div>
@@ -31,59 +42,51 @@ const DetailsPeople = ({ identificador }) => {
             <div className="col-1">
               <h6>Dimensions</h6>
               <div>
-                Height: {store?.characters?.results[identificador].height} <br></br>
+                Height: {store?.characters?.results[identificador].height}{' '}
+                <br></br>
                 Mass: {store?.characters?.results[identificador].mass}
               </div>
             </div>
             <div className="col-1">
               <h6>Physical characteristics</h6>
               <div>
-                Hair Color: {store?.characters?.results[identificador].hair_color} <br></br>
-                Skin Color: {store?.characters?.results[identificador].skin_color} <br></br>
-                Eye Color: {store?.characters?.results[identificador].eye_color} <br></br>
+                Hair Color:{' '}
+                {store?.characters?.results[identificador].hair_color} <br></br>
+                Skin Color:{' '}
+                {store?.characters?.results[identificador].skin_color} <br></br>
+                Eye Color: {
+                  store?.characters?.results[identificador].eye_color
+                }{' '}
+                <br></br>
               </div>
             </div>
             <div className="col-1">
               <h6>Birth Year</h6>
-              <div>
-                {store?.characters?.results[identificador].birth_year}
-              </div>
+              <div>{store?.characters?.results[identificador].birth_year}</div>
             </div>
             <div className="col-1">
               <h6>Gender</h6>
-              <div>
-                {store?.characters?.results[identificador].gender}
-              </div>
+              <div>{store?.characters?.results[identificador].gender}</div>
             </div>
             <div className="col-1">
               <h6>HomeWorld</h6>
-              <div>
-                {store?.characters?.results[identificador].homeworld}
-              </div>
+              <div>{store?.characters?.results[identificador].homeworld}</div>
             </div>
             <div className="col-2">
               <h6>Films</h6>
-              <div>
-                {store?.characters?.results[identificador].films}
-              </div>
+              <div>{store?.characters?.results[identificador].films}</div>
             </div>
             <div className="col-1">
               <h6>Species</h6>
-              <div>
-                {store?.characters?.results[identificador].species}
-              </div>
+              <div>{store?.characters?.results[identificador].species}</div>
             </div>
             <div className="col-2">
               <h6>Vehicles</h6>
-              <div>
-                {store?.characters?.results[identificador].vehicles}
-              </div>
+              <div>{store?.characters?.results[identificador].vehicles}</div>
             </div>
             <div className="col-2">
               <h6>StarShips</h6>
-              <div>
-                {store?.characters?.results[identificador].starships}
-              </div>
+              <div>{store?.characters?.results[identificador].starships}</div>
             </div>
           </div>
         </div>
