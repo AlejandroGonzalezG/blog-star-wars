@@ -5,7 +5,9 @@ import VehicleCard from '../Components/VehicleCard.jsx'
 const estiloCard = {
     width: "100%"
 }
-
+const estiloBoton = {
+  margin: "10px"
+}
 const Vehicles = ({identificador3, setIdentificador3}) => {
     const { store, actions } = useContext(Context);
     return (
@@ -16,7 +18,7 @@ const Vehicles = ({identificador3, setIdentificador3}) => {
           onClick={() => {
             actions.getVehiculos(store?.vehiculos.previous);
           }}
-        >
+          style={estiloBoton}>
           Previous
         </button>
         <button

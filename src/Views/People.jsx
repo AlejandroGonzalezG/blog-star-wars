@@ -18,6 +18,7 @@ const People = ({ identificador, setIdentificador }) => {
           onClick={() => {
             actions.getCharacters(store?.characters.previous);
           }}
+          style={estiloBoton}
         >
           Previous
         </button>

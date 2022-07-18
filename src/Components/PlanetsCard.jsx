@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
+const estiloCarta = {
+  width: "18rem",
+  margin: "5px"
+}
+
 const PlanetsCard = ({
   name,
   diameter,
@@ -16,7 +22,7 @@ const PlanetsCard = ({
   };
   return (
     <>
-      <div className="card" style={{ width: '18rem' }}>
+      <div className="card" style={estiloCarta}>
         <img
           src="https://static.wikia.nocookie.net/esstarwars/images/5/53/Ohmad.jpg"
           className="card-img-top"
