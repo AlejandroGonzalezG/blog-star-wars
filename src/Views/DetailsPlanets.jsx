@@ -9,6 +9,23 @@ const estiloDiv2 = {
   marginTop: '30px',
   padding: '2px',
 };
+const estiloContainer = {
+  height: "100px",
+  width: "256px"
+}
+const estiloContainer2 = {
+  height: "150px",
+  width: "256px"
+}
+
+const estiloContainerNaboo = {
+  height: "380px",
+  width: "256px"
+}
+const estiloImagen = {
+  height: "366px",
+  width: "640px"
+}
 
 const DetailsPlanetas = ({ identificador2 }) => {
   const { store } = useContext(Context);
@@ -21,7 +38,7 @@ const DetailsPlanetas = ({ identificador2 }) => {
               src="https://images.immediate.co.uk/production/volatile/sites/4/2018/08/eso0603a-b364432.jpg?quality=90&resize=700,466"
               className="img-fluid rounded-start"
               alt="..."
-            ></img>
+              style={estiloImagen}></img>
           </div>
           <div className="col-md-4">
             <div className="card-body">
@@ -38,52 +55,74 @@ const DetailsPlanetas = ({ identificador2 }) => {
           </div>
         </div>
         <div className="container" style={estiloDiv2}>
-          <div className="row">
-            <div className="col-1">
-              <h6>Rotation Period</h6>
-              <div>
-                {store?.planetas?.results[identificador2].rotation_period}
+          <div className="row" style={estiloDiv2}>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Rotation Period</h5>
+                <div>
+                  {store?.planetas?.results[identificador2].rotation_period}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Orbital Period</h6>
-              <div>
-                {store?.planetas?.results[identificador2].orbital_period}
+            <div className="container-categiry" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Orbital Period</h5>
+                <div>
+                  {store?.planetas?.results[identificador2].orbital_period}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Diameter</h6>
-              <div>{store?.planetas?.results[identificador2].diameter}</div>
-            </div>
-            <div className="col-1">
-              <h6>Climate</h6>
-              <div>{store?.planetas?.results[identificador2].climate}</div>
-            </div>
-            <div className="col-1">
-              <h6>Gravity</h6>
-              <div>{store?.planetas?.results[identificador2].gravity}</div>
-            </div>
-            <div className="col-1">
-              <h6>Terrain</h6>
-              <div>{store?.planetas?.results[identificador2].terrain}</div>
-            </div>
-            <div className="col-1">
-              <h6>Surface Water</h6>
-              <div>
-                {store?.planetas?.results[identificador2].surface_water}
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Diameter</h5>
+                <div>{store?.planetas?.results[identificador2].diameter}</div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Population</h6>
-              <div>{store?.planetas?.results[identificador2].population}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Climate</h5>
+                <div>{store?.planetas?.results[identificador2].climate}</div>
+              </div>
             </div>
-            <div className="col-2">
-              <h6>Residents</h6>
-              <div>{store?.planetas?.results[identificador2].residents}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Gravity</h5>
+                <div>{store?.planetas?.results[identificador2].gravity}</div>
+              </div>
             </div>
-            <div className="col-2">
-              <h6>Films</h6>
-              <div>{store?.planetas?.results[identificador2].films}</div>
+          </div>
+          <div className="row" style={estiloDiv2}>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Terrain</h5>
+                <div>{store?.planetas?.results[identificador2].terrain}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Surface Water</h5>
+                <div>
+                  {store?.planetas?.results[identificador2].surface_water}
+                </div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Population</h5>
+                <div>{store?.planetas?.results[identificador2].population}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainerNaboo}>
+              <div className="col-12">
+                <h5>Residents</h5>
+                <div>{store?.planetas?.results[identificador2].residents}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Films</h5>
+                <div>{store?.planetas?.results[identificador2].films}</div>
+              </div>
             </div>
           </div>
         </div>

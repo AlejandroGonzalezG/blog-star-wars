@@ -9,6 +9,20 @@ const estiloDiv2 = {
   marginTop: '30px',
   padding: '2px',
 };
+const estiloContainer = {
+  height: "100px",
+  width: "213px"
+}
+const estiloContainer2 = {
+  height: "150px",
+  width: "213px"
+}
+
+const estiloImagen = {
+  height: "366px",
+  width: "640px"
+}
+
 
 const DetailsVehiculos = ({ identificador3 }) => {
   const { store } = useContext(Context);
@@ -21,7 +35,7 @@ const DetailsVehiculos = ({ identificador3 }) => {
               src="https://images.brickset.com/news/62976_Terrain.png"
               className="img-fluid rounded-start"
               alt="..."
-            ></img>
+            style={estiloImagen} ></img>
           </div>
           <div className="col-md-4">
             <div className="card-body">
@@ -38,67 +52,90 @@ const DetailsVehiculos = ({ identificador3 }) => {
           </div>
         </div>
         <div className="container" style={estiloDiv2}>
-          <div className="row">
-            <div className="col-1">
-              <h6>Model</h6>
-              <div>{store?.vehiculos?.results[identificador3].model}</div>
-            </div>
-            <div className="col-1">
-              <h6>Manufacturer</h6>
-              <div>
-                {store?.vehiculos?.results[identificador3].manufacturer}
+          <div className="row" style={estiloDiv2}>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Model</h5>
+                <div>{store?.vehiculos?.results[identificador3].model}</div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Cost in Credits</h6>
-              <div>
-                {store?.vehiculos?.results[identificador3].cost_in_credits}
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Manufacturer</h5>
+                <div>
+                  {store?.vehiculos?.results[identificador3].manufacturer}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Length</h6>
-              <div>{store?.vehiculos?.results[identificador3].length}</div>
-            </div>
-            <div className="col-1">
-              <h6>Max Atmosphering Speed</h6>
-              <div>
-                {
-                  store?.vehiculos?.results[identificador3]
-                    .max_atmosphering_speed
-                }
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Cost in Credits</h5>
+                <div>
+                  {store?.vehiculos?.results[identificador3].cost_in_credits}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Crew</h6>
-              <div>{store?.vehiculos?.results[identificador3].crew}</div>
-            </div>
-            <div className="col-1">
-              <h6>Passengers</h6>
-              <div>{store?.vehiculos?.results[identificador3].passengers}</div>
-            </div>
-            <div className="col-1">
-              <h6>Cargo Capacity</h6>
-              <div>
-                {store?.vehiculos?.results[identificador3].cargo_capacity}
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Length</h5>
+                <div>{store?.vehiculos?.results[identificador3].length}</div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Consumables</h6>
-              <div>{store?.vehiculos?.results[identificador3].consumables}</div>
-            </div>
-            <div className="col-1">
-              <h6>Vehicle Class</h6>
-              <div>
-                {store?.vehiculos?.results[identificador3].vehicle_class}
+            <div className="container-caqtegory" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Max Atmosphering Speed</h5>
+                <div>
+                  {store?.vehiculos?.results[identificador3].max_atmosphering_speed}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Pilots</h6>
-              <div>{store?.vehiculos?.results[identificador3].pilots}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Crew</h5>
+                <div>{store?.vehiculos?.results[identificador3].crew}</div>
+              </div>
             </div>
-            <div className="col-1">
-              <h6>Films</h6>
-              <div>{store?.vehiculos?.results[identificador3].films}</div>
+          </div>
+          <div className="row" style={estiloDiv2}>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Passengers</h5>
+                <div>{store?.vehiculos?.results[identificador3].passengers}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Cargo Capacity</h5>
+                <div>
+                  {store?.vehiculos?.results[identificador3].cargo_capacity}
+                </div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Consumables</h5>
+                <div>{store?.vehiculos?.results[identificador3].consumables}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Vehicle Class</h5>
+                <div>
+                  {store?.vehiculos?.results[identificador3].vehicle_class}
+                </div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Pilots</h5>
+                <div>{store?.vehiculos?.results[identificador3].pilots}</div>
+              </div>
+            </div>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h5>Films</h5>
+                <div>{store?.vehiculos?.results[identificador3].films}</div>
+              </div>
             </div>
           </div>
         </div>

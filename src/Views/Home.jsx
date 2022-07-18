@@ -44,7 +44,7 @@ const Home = ({
         <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">People</h1>
           <button className="btn btn-more">
-            <Link to="/category/people">Learn More :)</Link>
+            <Link to="/category/people">Show all!</Link>
           </button>
         </div>
         <div className="d-flex">
@@ -73,7 +73,7 @@ const Home = ({
         <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">Vehicles</h1>
           <button className="btn btn-more">
-            <Link to="/category/vehicles">Learn More :)</Link>
+            <Link to="/category/vehicles">Show all!</Link>
           </button>
         </div>
         <div className="d-flex">
@@ -96,7 +96,7 @@ const Home = ({
         <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">Planets</h1>
           <button className="btn btn-more">
-            <Link to="/category/planets">Learn More :)</Link>
+            <Link to="/category/planets">Show all!</Link>
           </button>
         </div>
         <div className="d-flex">
