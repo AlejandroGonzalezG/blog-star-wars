@@ -10,6 +10,15 @@ const estiloDiv2 = {
   padding: '2px',
 };
 
+const estiloContainer = {
+  height: "150px",
+  width: "256px"
+}
+const estiloContainer2 = {
+  height: "200px",
+  width: "256px"
+}
+
 const DetailsPeople = ({ identificador }) => {
   const { store } = useContext(Context);
   return (
@@ -39,54 +48,74 @@ const DetailsPeople = ({ identificador }) => {
         </div>
         <div className="container" style={estiloDiv2}>
           <div className="row">
-            <div className="col-1">
-              <h6>Dimensions</h6>
-              <div>
-                Height: {store?.characters?.results[identificador].height}{' '}
-                <br></br>
-                Mass: {store?.characters?.results[identificador].mass}
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h5>Dimensions</h5>
+                <div>
+                  Height: {store?.characters?.results[identificador].height}{' '}
+                  <br></br>
+                  Mass: {store?.characters?.results[identificador].mass}
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Physical characteristics</h6>
-              <div>
-                Hair Color:{' '}
-                {store?.characters?.results[identificador].hair_color} <br></br>
-                Skin Color:{' '}
-                {store?.characters?.results[identificador].skin_color} <br></br>
-                Eye Color: {
-                  store?.characters?.results[identificador].eye_color
-                }{' '}
-                <br></br>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h6>Physical characteristics</h6>
+                <div>
+                  Hair Color:{' '}
+                  {store?.characters?.results[identificador].hair_color} <br></br>
+                  Skin Color:{' '}
+                  {store?.characters?.results[identificador].skin_color} <br></br>
+                  Eye Color: {
+                    store?.characters?.results[identificador].eye_color
+                  }{' '}
+                  <br></br>
+                </div>
               </div>
             </div>
-            <div className="col-1">
-              <h6>Birth Year</h6>
-              <div>{store?.characters?.results[identificador].birth_year}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h6>Birth Year</h6>
+                <div>{store?.characters?.results[identificador].birth_year}</div>
+              </div>
             </div>
-            <div className="col-1">
-              <h6>Gender</h6>
-              <div>{store?.characters?.results[identificador].gender}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h6>Gender</h6>
+                <div>{store?.characters?.results[identificador].gender}</div>
+              </div>
             </div>
-            <div className="col-1">
-              <h6>HomeWorld</h6>
-              <div>{store?.characters?.results[identificador].homeworld}</div>
+            <div className="container-category" style={estiloContainer}>
+              <div className="col-12">
+                <h6>HomeWorld</h6>
+                <div>{store?.characters?.results[identificador].homeworld}</div>
+              </div>
             </div>
-            <div className="col-2">
-              <h6>Films</h6>
-              <div>{store?.characters?.results[identificador].films}</div>
+          </div>
+          <div className="row" style={estiloDiv2}>
+            <div className="container-category" style={estiloContainer2}>
+              <div className="col-12">
+                <h6>Films</h6>
+                <div>{store?.characters?.results[identificador].films}</div>
+              </div>
             </div>
-            <div className="col-1">
-              <h6>Species</h6>
-              <div>{store?.characters?.results[identificador].species}</div>
+            <div className="container-category"style={estiloContainer2}>
+              <div className="col-12">
+                <h6>Species</h6>
+                <div>{store?.characters?.results[identificador].species}</div>
+              </div>
             </div>
-            <div className="col-2">
-              <h6>Vehicles</h6>
-              <div>{store?.characters?.results[identificador].vehicles}</div>
+            <div className="container-category"style={estiloContainer2}>
+              <div className="col-12">
+                <h6>Vehicles</h6>
+                <div>{store?.characters?.results[identificador].vehicles}</div>
+              </div>
             </div>
-            <div className="col-2">
-              <h6>StarShips</h6>
-              <div>{store?.characters?.results[identificador].starships}</div>
+            <div className="container-category"style={estiloContainer2}>
+              <div className="col-12">
+                <h6>StarShips</h6>
+                <div>{store?.characters?.results[identificador].starships}</div>
+              </div>
             </div>
           </div>
         </div>
