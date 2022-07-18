@@ -64,7 +64,7 @@ const App = () => {
             />
             {/* Home Component Route to DetailsPeople */}
             <Route
-              path="/details/:index"
+              path="/details/character/:index"
               element={
                 <DetailsPeople
                   identificador={identificador}
@@ -72,9 +72,9 @@ const App = () => {
                 />
               }
             />
-            {/* People Component Route to DetailsPeople */}
+            {/* People Card Component Route to DetailsPeople */}
             <Route
-              path="/category/people/details/:index"
+              path="/category/people/details/character/:index"
               element={
                 <DetailsPeople
                   identificador={identificador}
@@ -92,6 +92,7 @@ const App = () => {
                 />
               }
             />
+            {/* PlanetsCard Component Route to DetailsPeople */}
             <Route
               path="/category/planets/details/planet/:index"
               element={

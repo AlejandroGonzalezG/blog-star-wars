@@ -33,7 +33,7 @@ const PeopleCard = ({
           </ul>
           <div className="btns-container d-flex">
             <Link
-              to={`details/${index}`}
+              to={`details/character/${index}`}
               className="btn btn-primary"
               onClickCapture={() => setIdentificador(index)}
             >
