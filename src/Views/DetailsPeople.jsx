@@ -47,7 +47,7 @@ const DetailsPeople = ({ identificador }) => {
           </div>
         </div>
         <div className="container" style={estiloDiv2}>
-          <div className="row">
+          <div className="row" style={estiloDiv2}>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Dimensions</h5>
@@ -60,7 +60,7 @@ const DetailsPeople = ({ identificador }) => {
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
-                <h6>Physical characteristics</h6>
+                <h5>Physical characteristics</h5>
                 <div>
                   Hair Color:{' '}
                   {store?.characters?.results[identificador].hair_color} <br></br>
@@ -75,19 +75,19 @@ const DetailsPeople = ({ identificador }) => {
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
-                <h6>Birth Year</h6>
+                <h5>Birth Year</h5>
                 <div>{store?.characters?.results[identificador].birth_year}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
-                <h6>Gender</h6>
+                <h5>Gender</h5>
                 <div>{store?.characters?.results[identificador].gender}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
-                <h6>HomeWorld</h6>
+                <h5>HomeWorld</h5>
                 <div>{store?.characters?.results[identificador].homeworld}</div>
               </div>
             </div>
@@ -95,25 +95,25 @@ const DetailsPeople = ({ identificador }) => {
           <div className="row" style={estiloDiv2}>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
-                <h6>Films</h6>
+                <h5>Films</h5>
                 <div>{store?.characters?.results[identificador].films}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
-                <h6>Species</h6>
+                <h5>Species</h5>
                 <div>{store?.characters?.results[identificador].species}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
-                <h6>Vehicles</h6>
+                <h5>Vehicles</h5>
                 <div>{store?.characters?.results[identificador].vehicles}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
-                <h6>StarShips</h6>
+                <h5>StarShips</h5>
                 <div>{store?.characters?.results[identificador].starships}</div>
               </div>
             </div>
