@@ -20,7 +20,7 @@ const Home = ({
   return (
     <>
       <div className="people mt-5">
-        <div className="header-container d-flex align-items-center">
+        <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">People</h1>
           <button className="btn btn-more">
             <Link to="/category/people">Learn More :)</Link>
@@ -43,7 +43,7 @@ const Home = ({
         </div>
       </div>
       <div className="vehicles mt-5">
-        <div className="header-container d-flex align-items-center">
+        <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">Vehicles</h1>
           <button className="btn btn-more">
             <Link to="/category/vehicles">Learn More :)</Link>
@@ -66,7 +66,7 @@ const Home = ({
         </div>
       </div>
       <div className="planets mt-5">
-        <div className="header-container d-flex align-items-center">
+        <div className="header-container mb-4 d-flex align-items-center">
           <h1 className="category-title">Planets</h1>
           <button className="btn btn-more">
             <Link to="/category/planets">Learn More :)</Link>
