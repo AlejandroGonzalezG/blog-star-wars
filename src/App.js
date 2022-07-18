@@ -15,13 +15,21 @@ const App = () => {
   // States
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
+  const [isDeleteActive, setIsDeleteActive] = useState(false);
   const [identificador, setIdentificador] = useState(null);
   const [identificador2, setIdentificador2] = useState(null);
   const [identificador3, setIdentificador3] = useState(null);
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          todos={todos}
+          setTodos={setTodos}
+          isDeleteActive={isDeleteActive}
+          setIsDeleteActive={setIsDeleteActive}
+        />
         <div className="container">
           <Routes>
             <Route path="*" element={<NotFound />} />
@@ -39,6 +47,8 @@ const App = () => {
                   setIdentificador2={setIdentificador2}
                   identificador3={identificador3}
                   setIdentificador3={setIdentificador3}
+                  isDeleteActive={isDeleteActive}
+                  setIsDeleteActive={setIsDeleteActive}
                 />
               }
             />

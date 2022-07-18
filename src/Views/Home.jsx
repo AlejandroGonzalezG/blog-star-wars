@@ -18,6 +18,8 @@ const Home = ({
   setIdentificador2,
   identificador3,
   setIdentificador3,
+  isDeleteActive,
+  setIsDeleteActive,
 }) => {
   const { store, actions } = useContext(Context);
   // Events functions
@@ -65,6 +67,8 @@ const Home = ({
                   setTodos={setTodos}
                   textHandler={textHandler}
                   addTodo={addTodo}
+                  isDeleteActive={isDeleteActive}
+                  setIsDeleteActive={setIsDeleteActive}
                 />
               ))}
         </div>
