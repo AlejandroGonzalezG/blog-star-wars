@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 import DetailsPeople from '../Views/DetailsPeople';
 
+
+
+const estiloCarta = {
+  width: "18rem",
+  margin: "5px"
+}
+
 const PeopleCard = ({
   name,
   height,
@@ -18,7 +25,7 @@ const PeopleCard = ({
   };
   return (
     <>
-      <div className="card" style={{ width: '18rem' }} id={index}>
+      <div className="card" style={estiloCarta} id={index}>
         <img
           src="https://aux.iconspalace.com/uploads/204257333216454877.png"
           className="card-img-top"

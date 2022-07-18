@@ -6,7 +6,9 @@ import PlanetsCard from '../Components/PlanetsCard.jsx';
 const estiloCard = {
   width: "100%"
 }
-
+const estiloBoton = {
+  margin: "10px"
+}
 
 const Planets = ({identificador2, setIdentificador2}) => {
 
@@ -20,7 +22,7 @@ const Planets = ({identificador2, setIdentificador2}) => {
           onClick={() => {
             actions.getPlanetas(store?.planetas.previous);
           }}
-        >
+          style={estiloBoton}>
           Previous
         </button>
         <button

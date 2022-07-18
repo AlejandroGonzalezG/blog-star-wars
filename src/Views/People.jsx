@@ -8,6 +8,10 @@ const estiloCard = {
   width: '100%',
 };
 
+const estiloBoton = {
+  margin: "10px"
+}
+
 const People = ({identificador, setIdentificador}) => {
   const { store, actions } = useContext(Context);
   return (
@@ -18,7 +22,7 @@ const People = ({identificador, setIdentificador}) => {
           onClick={() => {
             actions.getCharacters(store?.characters.previous);
           }}
-        >
+        style={estiloBoton}>
           Previous
         </button>
         <button
