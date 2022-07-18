@@ -44,7 +44,7 @@ const injectContext = PassedComponent => {
     // the context will now have a getStore, getActions and setStore functions available, because they were declared
     // on the state of this component
     return (
-      <Context.Provider value={state }>
+      <Context.Provider value={state}>
         <PassedComponent {...props} />
       </Context.Provider>
     );

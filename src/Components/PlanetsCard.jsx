@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-const PlanetsCard = ({ name, diameter, climate, population }) => {
+ 
+const PlanetsCard = ({ name, diameter, climate, population,setIdentificador2, index }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -23,7 +23,7 @@ const PlanetsCard = ({ name, diameter, climate, population }) => {
             <li>Population: {population}</li>
           </ul>
           <div className="btns-container d-flex">
-            <Link to="/" className="btn btn-primary">
+            <Link to={`details/${index}`} className="btn btn-primary" onClickCapture={() => setIdentificador2(index)}>
               Learn More!
             </Link>
             {isActive ? (

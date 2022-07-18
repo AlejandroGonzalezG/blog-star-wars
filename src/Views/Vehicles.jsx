@@ -6,10 +6,8 @@ const estiloCard = {
     width: "100%"
 }
 
-const Vehicles = () => {
+const Vehicles = ({identificador3, setIdentificador3}) => {
     const { store, actions } = useContext(Context);
-
-    console.log(store)
     return (
         <>
         <div className="container d-flex align-items-center justify-content-center">
@@ -37,8 +35,8 @@ const Vehicles = () => {
             {
               !!store.vehiculos &&
               store.vehiculos.results.length > 0 &&
-              store.vehiculos.results.map((item,) => (
-                <VehicleCard {...item} key={item.name} />
+              store.vehiculos.results.map((item, i) => (
+                <VehicleCard {...item} key={item.name} index={i} identificador3={identificador3} setIdentificador3={setIdentificador3}/>
               ))
             }
           </div>
@@ -49,3 +47,4 @@ const Vehicles = () => {
 };
 
 export default Vehicles;
+ 

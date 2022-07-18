@@ -4,7 +4,7 @@ import { Context } from '../store/appContext';
 import DetailsPeople from '../Views/DetailsPeople';
 
 
-
+ 
 const PeopleCard = ({ name, height, mass, gender, index, identificador, setIdentificador }) => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
