@@ -69,7 +69,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ favorites: favorites });
         }
 
-        console.log(favorites);
+        // console.log(favorites);
+      },
+      deleteFavorite: index => {
+        const store = getStore();
+        const aux = [...store.favorites];
+        aux[index] = null;
+        const filterElem = aux.filter(elem => elem !== null);
+        setStore({ favorites: filterElem });
+
+        // console.log(store.favorites);
       },
     },
   };

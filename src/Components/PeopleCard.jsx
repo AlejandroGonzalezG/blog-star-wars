@@ -37,6 +37,12 @@ const PeopleCard = ({ name, height, mass, gender, index, textHandler }) => {
             >
               <i className="fa-solid fa-heart"></i>
             </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => actions.deleteFavorite(index)}
+            >
+              <i className="fa-solid fa-trash-can"></i>
+            </button>
 
             {/* {isActive ? (
               <button
