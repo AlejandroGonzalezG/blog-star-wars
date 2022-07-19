@@ -12,7 +12,6 @@ const PlanetsCard = ({
   diameter,
   climate,
   population,
-  setIdentificador2,
   index,
 }) => {
   const [isActive, setIsActive] = useState(false);
@@ -38,9 +37,7 @@ const PlanetsCard = ({
           <div className="btns-container d-flex">
             <Link
               to={`details/planet/${index}`}
-              className="btn btn-primary"
-              onClickCapture={() => setIdentificador2(index)}
-            >
+              className="btn btn-primary">
               Learn More!
             </Link>
             {isActive ? (

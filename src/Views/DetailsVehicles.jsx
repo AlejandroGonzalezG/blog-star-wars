@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import PeopleCard from '../Components/PeopleCard.jsx';
 import { Context } from '../store/appContext';
 
@@ -24,8 +25,9 @@ const estiloImagen = {
 }
 
 
-const DetailsVehiculos = ({ identificador3 }) => {
+const DetailsVehiculos = () => {
   const { store } = useContext(Context);
+  const params = useParams();
   return (
     <>
       <div className="card mb-3" style={estiloDiv}>
@@ -40,7 +42,7 @@ const DetailsVehiculos = ({ identificador3 }) => {
           <div className="col-md-4">
             <div className="card-body">
               <h5 className="card-title">
-                {store?.vehiculos?.results[identificador3].name}
+                {store?.vehiculos?.results[params.index].name}
               </h5>
               <p className="card-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
@@ -56,14 +58,14 @@ const DetailsVehiculos = ({ identificador3 }) => {
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Model</h5>
-                <div>{store?.vehiculos?.results[identificador3].model}</div>
+                <div>{store?.vehiculos?.results[params.index].model}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Manufacturer</h5>
                 <div>
-                  {store?.vehiculos?.results[identificador3].manufacturer}
+                  {store?.vehiculos?.results[params.index].manufacturer}
                 </div>
               </div>
             </div>
@@ -71,28 +73,28 @@ const DetailsVehiculos = ({ identificador3 }) => {
               <div className="col-12">
                 <h5>Cost in Credits</h5>
                 <div>
-                  {store?.vehiculos?.results[identificador3].cost_in_credits}
+                  {store?.vehiculos?.results[params.index].cost_in_credits}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Length</h5>
-                <div>{store?.vehiculos?.results[identificador3].length}</div>
+                <div>{store?.vehiculos?.results[params.index].length}</div>
               </div>
             </div>
             <div className="container-caqtegory" style={estiloContainer}>
               <div className="col-12">
                 <h5>Max Atmosphering Speed</h5>
                 <div>
-                  {store?.vehiculos?.results[identificador3].max_atmosphering_speed}
+                  {store?.vehiculos?.results[params.index].max_atmosphering_speed}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Crew</h5>
-                <div>{store?.vehiculos?.results[identificador3].crew}</div>
+                <div>{store?.vehiculos?.results[params.index].crew}</div>
               </div>
             </div>
           </div>
@@ -100,41 +102,41 @@ const DetailsVehiculos = ({ identificador3 }) => {
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Passengers</h5>
-                <div>{store?.vehiculos?.results[identificador3].passengers}</div>
+                <div>{store?.vehiculos?.results[params.index].passengers}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Cargo Capacity</h5>
                 <div>
-                  {store?.vehiculos?.results[identificador3].cargo_capacity}
+                  {store?.vehiculos?.results[params.index].cargo_capacity}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Consumables</h5>
-                <div>{store?.vehiculos?.results[identificador3].consumables}</div>
+                <div>{store?.vehiculos?.results[params.index].consumables}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Vehicle Class</h5>
                 <div>
-                  {store?.vehiculos?.results[identificador3].vehicle_class}
+                  {store?.vehiculos?.results[params.index].vehicle_class}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Pilots</h5>
-                <div>{store?.vehiculos?.results[identificador3].pilots}</div>
+                <div>{store?.vehiculos?.results[params.index].pilots}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Films</h5>
-                <div>{store?.vehiculos?.results[identificador3].films}</div>
+                <div>{store?.vehiculos?.results[params.index].films}</div>
               </div>
             </div>
           </div>
