@@ -22,14 +22,53 @@ const PeopleCard = ({
   setInputValue,
   textHandler,
   addTodo,
+  isDeleteActive,
+  setIsDeleteActive,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const handleClickAdd = () => {
+  const handleClick = () => {
     setIsActive(!isActive);
-    textHandler({ name });
-    addTodo({ name });
+    setIsDeleteActive(!isDeleteActive);
   };
+
+  const addItem = name => {
+    textHandler(name);
+    addTodo(name);
+  };
+
+  // const renderBtn = () => {
+  //   if (isDeleteActive) {
+  //     // If isActive is true appears solid heart
+  //     return (
+  //       <button
+  //         className="btn btn-secondary"
+  //         onClick={() => {
+  //           handleClick();
+  //           console.log(isDeleteActive);
+  //         }}
+  //       >
+  //         <i className="fa-solid fa-heart"></i>
+  //       </button>
+  //     );
+  //     // isActive false appears empty hear
+  //   } else if (!isDeleteActive) {
+  //     return (
+  //       <button
+  //         className="btn btn-secondary"
+  //         // Add todo Item onclick of heart empty
+
+  //         onClick={() => {
+  //           addItem(name);
+  //           handleClick();
+  //           console.log(isDeleteActive);
+  //         }}
+  //       >
+  //         <i className="fa-regular fa-heart"></i>
+  //       </button>
+  //     );
+  //   }
+  // };
 
   return (
     <>
@@ -52,15 +91,53 @@ const PeopleCard = ({
               className="btn btn-primary">
               Learn More!
             </Link>
+
+            {/* {renderBtn()} */}
             {isActive ? (
-              <button className="btn btn-secondary" onClick={handleClickAdd}>
+              <button
+                className="btn btn-secondary"
+                onClick={() => {
+                  handleClick();
+                  setIsDeleteActive(!isDeleteActive);
+                }}
+              >
                 <i className="fa-solid fa-heart"></i>
               </button>
             ) : (
-              <button className="btn btn-secondary" onClick={handleClickAdd}>
+              <button
+                className="btn btn-secondary"
+                // Add todo Item onclick of heart empty
+
+                onClick={() => {
+                  handleClick();
+                  addItem(name);
+                }}
+              >
                 <i className="fa-regular fa-heart"></i>
               </button>
             )}
+            {/* {isActive ? (
+              <button
+                className="btn btn-secondary"
+                onClick={() => {
+                  handleClick();
+                }}
+              >
+                <i className="fa-solid fa-heart"></i>
+              </button>
+            ) : (
+              <button
+                className="btn btn-secondary"
+                // Add todo Item onclick of heart empty
+
+                onClick={() => {
+                  handleClick();
+                  addItem(name);
+                }}
+              >
+                <i className="fa-regular fa-heart"></i>
+              </button>
+            )} */}
           </div>
         </div>
       </div>

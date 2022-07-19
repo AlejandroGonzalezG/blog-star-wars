@@ -18,7 +18,14 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          todos={todos}
+          setTodos={setTodos}
+          isDeleteActive={isDeleteActive}
+          setIsDeleteActive={setIsDeleteActive}
+        />
         <div className="container">
           <Routes>
             <Route path="*" element={<NotFound />} />

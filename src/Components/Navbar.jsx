@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import '../Styles/Navbar.css';
+import FavoritesList from './FavoritesList';
 
-const Navbar = () => {
+const Navbar = ({ todos, setTodos, isDeleteActive, setIsDeleteActive }) => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
@@ -58,34 +59,12 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <div className="dropdown">
-            <button
-              className="btn btn-primary btn-toggle dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Favorites
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </div>
+          <FavoritesList
+            todos={todos}
+            setTodos={setTodos}
+            isDeleteActive={isDeleteActive}
+            setIsDeleteActive={setIsDeleteActive}
+          />
         </div>
       </div>
     </nav>

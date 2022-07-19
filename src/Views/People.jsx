@@ -3,16 +3,20 @@ import { useContext } from 'react';
 import Card from '../Components/Card';
 import { Context } from '../store/appContext';
 import PeopleCard from '../Components/PeopleCard.jsx';
- 
+
 const estiloCard = {
   width: '100%',
 };
+
 
 const estiloBoton = {
   margin: "10px"
 }
 
 const People = () => {
+=======
+const People = ({ identificador, setIdentificador }) => {
+
   const { store, actions } = useContext(Context);
   return (
     <>
@@ -22,7 +26,8 @@ const People = () => {
           onClick={() => {
             actions.getCharacters(store?.characters.previous);
           }}
-        style={estiloBoton}>
+          style={estiloBoton}
+        >
           Previous
         </button>
         <button
