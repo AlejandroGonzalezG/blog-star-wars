@@ -23,8 +23,6 @@ const App = () => {
           setInputValue={setInputValue}
           todos={todos}
           setTodos={setTodos}
-          isDeleteActive={isDeleteActive}
-          setIsDeleteActive={setIsDeleteActive}
         />
         <div className="container">
           <Routes>
@@ -40,65 +38,35 @@ const App = () => {
                 />
               }
             />
-            <Route
-              path="/category/people"
-              element={
-                <People />
-              }
-            />
-            <Route
-              path="/category/planets"
-              element={
-                <Planets />
-              }
-            />
-            <Route
-              path="/category/vehicles"
-              element={
-                <Vehicles />
-              }
-            />
+            <Route path="/category/people" element={<People />} />
+            <Route path="/category/planets" element={<Planets />} />
+            <Route path="/category/vehicles" element={<Vehicles />} />
             {/* Home Component Route to DetailsPeople */}
             <Route
               path="/details/character/:index"
-              element={
-                <DetailsPeople />
-              }
+              element={<DetailsPeople />}
             />
             {/* People Card Component Route to DetailsPeople */}
             <Route
               path="/category/people/details/character/:index"
-              element={
-                <DetailsPeople />
-              }
+              element={<DetailsPeople />}
             />
             {/* Home Component Route to DetailsVehicles */}
             <Route
               path="details/vehicle/:index"
-              element={
-                <DetailsVehicles />
-              }
+              element={<DetailsVehicles />}
             />
             {/* VehicleCard Component Route to DetailsVehicles */}
             <Route
               path="/category/vehicles/details/vehicle/:index"
-              element={
-                <DetailsVehicles />
-              }
+              element={<DetailsVehicles />}
             />
             {/* Home Component Route to DetailsPlanets */}
-            <Route
-              path="/details/planet/:index"
-              element={
-                <DetailsPlanets />
-              }
-            />
+            <Route path="/details/planet/:index" element={<DetailsPlanets />} />
             {/* PlanetsCard Component Route to DetailsPlanets */}
             <Route
               path="/category/planets/details/planet/:index"
-              element={
-                <DetailsPlanets />
-              }
+              element={<DetailsPlanets />}
             />
           </Routes>
         </div>

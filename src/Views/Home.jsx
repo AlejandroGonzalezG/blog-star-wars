@@ -12,8 +12,7 @@ const Home = ({
   setTodos,
   inputValue,
 
-  setInputValue
-
+  setInputValue,
 }) => {
   const { store, actions } = useContext(Context);
   // Events functions
@@ -59,8 +58,6 @@ const Home = ({
                   setTodos={setTodos}
                   textHandler={textHandler}
                   addTodo={addTodo}
-                  isDeleteActive={isDeleteActive}
-                  setIsDeleteActive={setIsDeleteActive}
                 />
               ))}
         </div>
@@ -78,11 +75,7 @@ const Home = ({
             store.vehiculos.results
               .filter((item, index, obj) => index <= 3)
               .map((item, i) => (
-                <VehicleCard
-                  {...item}
-                  key={item.name}
-                  index={i}
-                />
+                <VehicleCard {...item} key={item.name} index={i} />
               ))}
         </div>
       </div>
@@ -99,11 +92,7 @@ const Home = ({
             store.planetas.results
               .filter((item, index, obj) => index <= 3)
               .map((item, i) => (
-                <PlanetsCard
-                  {...item}
-                  key={item.name}
-                  index={i}
-                />
+                <PlanetsCard {...item} key={item.name} index={i} />
               ))}
         </div>
       </div>
