@@ -8,6 +8,10 @@ const estiloCard = {
   width: '100%',
 };
 
+const estiloBoton = {
+  margin: '10px',
+};
+
 const People = ({ identificador, setIdentificador }) => {
   const { store, actions } = useContext(Context);
   return (

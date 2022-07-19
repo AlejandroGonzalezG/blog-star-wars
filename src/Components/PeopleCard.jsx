@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 import DetailsPeople from '../Views/DetailsPeople';
 
-
-
 const estiloCarta = {
-  width: "18rem",
-  margin: "5px"
-}
+  width: '18rem',
+  margin: '5px',
+};
 
 const PeopleCard = ({
   name,
@@ -120,28 +118,6 @@ const PeopleCard = ({
                 <i className="fa-regular fa-heart"></i>
               </button>
             )}
-            {/* {isActive ? (
-              <button
-                className="btn btn-secondary"
-                onClick={() => {
-                  handleClick();
-                }}
-              >
-                <i className="fa-solid fa-heart"></i>
-              </button>
-            ) : (
-              <button
-                className="btn btn-secondary"
-                // Add todo Item onclick of heart empty
-
-                onClick={() => {
-                  handleClick();
-                  addItem(name);
-                }}
-              >
-                <i className="fa-regular fa-heart"></i>
-              </button>
-            )} */}
           </div>
         </div>
       </div>
