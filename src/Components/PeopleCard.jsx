@@ -8,29 +8,8 @@ const estiloCarta = {
   margin: '5px',
 };
 
-const PeopleCard = ({
-  name,
-  height,
-  mass,
-  gender,
-  index,
-  todos,
-  setTodos,
-  inputValue,
-  setInputValue,
-  textHandler,
-  addTodo,
-}) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
-
-  const addItem = name => {
-    textHandler(name);
-    addTodo(name);
-  };
+const PeopleCard = ({ name, height, mass, gender, index, textHandler }) => {
+  const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -52,8 +31,14 @@ const PeopleCard = ({
               Learn More!
             </Link>
 
-            {/* {renderBtn()} */}
-            {isActive ? (
+            <button
+              className="btn btn-secondary"
+              onClick={() => actions.addFavorite(name, index)}
+            >
+              <i className="fa-solid fa-heart"></i>
+            </button>
+
+            {/* {isActive ? (
               <button
                 className="btn btn-secondary"
                 onClick={() => {
@@ -74,7 +59,7 @@ const PeopleCard = ({
               >
                 <i className="fa-regular fa-heart"></i>
               </button>
-            )}
+            )} */}
           </div>
         </div>
       </div>

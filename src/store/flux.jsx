@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       characters: null,
       planetas: null,
       vehiculos: null,
+      favorites: [],
     },
     actions: {
       getCharacters: async url => {
@@ -52,6 +53,23 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log(error);
         }
+      },
+      addFavorite: (name, index) => {
+        const { favorites } = getStore(); // store.favorites = []
+        const favorite = {
+          name: `${name}`,
+          index: `${index}`,
+        };
+
+        // console.log(favorite.name, favorite.index);
+
+        const findFav = favorites.find(elem => elem.name === favorite.name);
+        if (!findFav) {
+          favorites.push(favorite);
+          setStore({ favorites: favorites });
+        }
+
+        console.log(favorites);
       },
     },
   };

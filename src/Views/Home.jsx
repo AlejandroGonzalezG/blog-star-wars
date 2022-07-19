@@ -17,11 +17,6 @@ const Home = ({
   const { store, actions } = useContext(Context);
   // Events functions
 
-  const textHandler = name => {
-    // Grab the text of the input and set it to the inputValue state
-    setInputValue(name);
-  };
-
   const addTodo = name => {
     // When button clicked, add todo to an object with its text and an id
     setTodos([
@@ -56,7 +51,6 @@ const Home = ({
                   setInputValue={setInputValue}
                   todos={todos}
                   setTodos={setTodos}
-                  textHandler={textHandler}
                   addTodo={addTodo}
                 />
               ))}

@@ -19,7 +19,7 @@ const FavoritesList = ({
           Favorites
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          {todos.map(todo => (
+          {/* {todos.map(todo => (
             <TodoItem
               key={todo.id}
               text={todo.text}
@@ -29,7 +29,7 @@ const FavoritesList = ({
               isDeleteActive={isDeleteActive}
               setIsDeleteActive={setIsDeleteActive}
             />
-          ))}
+          ))} */}
         </ul>
       </div>
     </>

@@ -13,30 +13,17 @@ import { useState } from 'react';
 
 const App = () => {
   // States
-  const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
   return (
     <>
       <BrowserRouter>
-        <Navbar
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          todos={todos}
-          setTodos={setTodos}
-        />
+        <Navbar todos={todos} setTodos={setTodos} />
         <div className="container">
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route
               path="/"
-              element={
-                <Home
-                  inputValue={inputValue}
-                  setInputValue={setInputValue}
-                  todos={todos}
-                  setTodos={setTodos}
-                />
-              }
+              element={<Home todos={todos} setTodos={setTodos} />}
             />
             <Route path="/category/people" element={<People />} />
             <Route path="/category/planets" element={<Planets />} />
