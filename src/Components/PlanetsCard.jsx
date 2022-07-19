@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../store/appContext';
 
 
 const estiloCarta = {
@@ -15,10 +16,9 @@ const PlanetsCard = ({
   index,
 }) => {
   const [isActive, setIsActive] = useState(false);
+  const { store, actions } = useContext(Context);
 
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
+  
   return (
     <>
       <div className="card" style={estiloCarta}>
@@ -40,15 +40,18 @@ const PlanetsCard = ({
               className="btn btn-primary">
               Learn More!
             </Link>
-            {isActive ? (
-              <button className="btn btn-secondary" onClick={handleClick}>
-                <i className="fa-solid fa-heart"></i>
-              </button>
-            ) : (
-              <button className="btn btn-secondary" onClick={handleClick}>
-                <i className="fa-regular fa-heart"></i>
-              </button>
-            )}
+            <button
+              className="btn btn-secondary"
+              onClick={() => actions.addFavorite(name)}
+            >
+              <i className="fa-solid fa-heart"></i>
+            </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => actions.deleteFavorite(name)}
+            >
+              <i className="fa-solid fa-trash-can"></i>
+            </button>
           </div>
         </div>
       </div>
