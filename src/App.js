@@ -9,22 +9,18 @@ import Planets from './Views/Planets';
 import DetailsPeople from './Views/DetailsPeople';
 import DetailsPlanets from './Views/DetailsPlanets';
 import DetailsVehicles from './Views/DetailsVehicles';
-import { useState } from 'react';
 
 const App = () => {
   // States
-  const [todos, setTodos] = useState([]);
+
   return (
     <>
       <BrowserRouter>
-        <Navbar todos={todos} setTodos={setTodos} />
+        <Navbar />
         <div className="container">
           <Routes>
             <Route path="*" element={<NotFound />} />
-            <Route
-              path="/"
-              element={<Home todos={todos} setTodos={setTodos} />}
-            />
+            <Route path="/" element={<Home />} />
             <Route path="/category/people" element={<People />} />
             <Route path="/category/planets" element={<Planets />} />
             <Route path="/category/vehicles" element={<Vehicles />} />

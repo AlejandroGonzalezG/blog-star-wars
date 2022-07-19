@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import '../Styles/Navbar.css';
 import FavoritesList from './FavoritesList';
 
-const Navbar = ({ todos, setTodos, isDeleteActive, setIsDeleteActive }) => {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
@@ -59,12 +59,7 @@ const Navbar = ({ todos, setTodos, isDeleteActive, setIsDeleteActive }) => {
               </NavLink>
             </li>
           </ul>
-          <FavoritesList
-            todos={todos}
-            setTodos={setTodos}
-            isDeleteActive={isDeleteActive}
-            setIsDeleteActive={setIsDeleteActive}
-          />
+          <FavoritesList />
         </div>
       </div>
     </nav>

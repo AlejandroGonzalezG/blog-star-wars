@@ -7,26 +7,9 @@ import PlanetsCard from '../Components/PlanetsCard.jsx';
 import VehicleCard from '../Components/VehicleCard';
 import '../Styles/Home.css';
 
-const Home = ({
-  todos,
-  setTodos,
-  inputValue,
-
-  setInputValue,
-}) => {
+const Home = () => {
   const { store, actions } = useContext(Context);
   // Events functions
-
-  const addTodo = name => {
-    // When button clicked, add todo to an object with its text and an id
-    setTodos([
-      ...todos,
-      {
-        text: name,
-        id: Math.round(Math.random() * 1000),
-      },
-    ]);
-  };
 
   return (
     <>
@@ -43,16 +26,7 @@ const Home = ({
             store.characters.results
               .filter((item, index, obj) => index <= 3)
               .map((item, i) => (
-                <PeopleCard
-                  {...item}
-                  key={item.name}
-                  index={i}
-                  inputValue={inputValue}
-                  setInputValue={setInputValue}
-                  todos={todos}
-                  setTodos={setTodos}
-                  addTodo={addTodo}
-                />
+                <PeopleCard {...item} key={item.name} index={i} />
               ))}
         </div>
       </div>

@@ -54,11 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-      addFavorite: (name, index) => {
+      addFavorite: name => {
         const { favorites } = getStore(); // store.favorites = []
         const favorite = {
           name: `${name}`,
-          index: `${index}`,
         };
 
         // console.log(favorite.name, favorite.index);
@@ -69,17 +68,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ favorites: favorites });
         }
 
-        // console.log(favorites);
+        console.log(favorites);
       },
-      deleteFavorite: index => {
-        const store = getStore();
-        const aux = [...store.favorites];
-        aux[index] = null;
-        const filterElem = aux.filter(elem => elem !== null);
+      deleteFavorite: name => {
+        const { favorites } = getStore(); // store.favorites = []
+        const filterElem = favorites.filter(elem => elem.name !== name);
         setStore({ favorites: filterElem });
-
-        // console.log(store.favorites);
       },
+      // deleteFavorite: index => {
+      //   const store = getStore();
+      //   const aux = [...store.favorites];
+      //   aux[index] = null;
+      //   const filterElem = aux.filter(elem => elem !== null);
+      //   setStore({ favorites: filterElem });
+
+      //   // console.log(store.favorites);
+      // },
     },
   };
 };

@@ -8,7 +8,7 @@ const estiloCarta = {
   margin: '5px',
 };
 
-const PeopleCard = ({ name, height, mass, gender, index, textHandler }) => {
+const PeopleCard = ({ name, height, mass, gender, index }) => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -33,13 +33,13 @@ const PeopleCard = ({ name, height, mass, gender, index, textHandler }) => {
 
             <button
               className="btn btn-secondary"
-              onClick={() => actions.addFavorite(name, index)}
+              onClick={() => actions.addFavorite(name)}
             >
               <i className="fa-solid fa-heart"></i>
             </button>
             <button
               className="btn btn-secondary"
-              onClick={() => actions.deleteFavorite(index)}
+              onClick={() => actions.deleteFavorite(name)}
             >
               <i className="fa-solid fa-trash-can"></i>
             </button>
