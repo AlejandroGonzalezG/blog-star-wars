@@ -15,10 +15,6 @@ const App = () => {
   // States
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
-  const [isDeleteActive, setIsDeleteActive] = useState(false);
-  const [identificador, setIdentificador] = useState(null);
-  const [identificador2, setIdentificador2] = useState(null);
-  const [identificador3, setIdentificador3] = useState(null);
   return (
     <>
       <BrowserRouter>
@@ -41,102 +37,67 @@ const App = () => {
                   setInputValue={setInputValue}
                   todos={todos}
                   setTodos={setTodos}
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
-                  identificador2={identificador2}
-                  setIdentificador2={setIdentificador2}
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
-                  isDeleteActive={isDeleteActive}
-                  setIsDeleteActive={setIsDeleteActive}
                 />
               }
             />
             <Route
               path="/category/people"
               element={
-                <People
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
-                />
+                <People />
               }
             />
             <Route
               path="/category/planets"
               element={
-                <Planets
-                  identificador2={identificador2}
-                  setIdentificador2={setIdentificador2}
-                />
+                <Planets />
               }
             />
             <Route
               path="/category/vehicles"
               element={
-                <Vehicles
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
-                />
+                <Vehicles />
               }
             />
             {/* Home Component Route to DetailsPeople */}
             <Route
               path="/details/character/:index"
               element={
-                <DetailsPeople
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
-                />
+                <DetailsPeople />
               }
             />
             {/* People Card Component Route to DetailsPeople */}
             <Route
               path="/category/people/details/character/:index"
               element={
-                <DetailsPeople
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
-                />
+                <DetailsPeople />
               }
             />
             {/* Home Component Route to DetailsVehicles */}
             <Route
               path="details/vehicle/:index"
               element={
-                <DetailsVehicles
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
-                />
+                <DetailsVehicles />
               }
             />
             {/* VehicleCard Component Route to DetailsVehicles */}
             <Route
               path="/category/vehicles/details/vehicle/:index"
               element={
-                <DetailsVehicles
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
-                />
+                <DetailsVehicles />
               }
             />
             {/* Home Component Route to DetailsPlanets */}
             <Route
               path="/details/planet/:index"
               element={
-                <DetailsPlanets
-                  identificador2={identificador2}
-                  setIdentificador2={setIdentificador2}
-                />
+                <DetailsPlanets />
               }
             />
             {/* PlanetsCard Component Route to DetailsPlanets */}
             <Route
               path="/category/planets/details/planet/:index"
               element={
-                <DetailsPlanets
-                  identificador2={identificador2}
-                  setIdentificador2={setIdentificador2}
-                />
+                <DetailsPlanets />
               }
             />
           </Routes>

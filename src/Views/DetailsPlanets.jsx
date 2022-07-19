@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import PeopleCard from '../Components/PeopleCard.jsx';
 import { Context } from '../store/appContext';
 
@@ -27,8 +28,9 @@ const estiloImagen = {
   width: "640px"
 }
 
-const DetailsPlanetas = ({ identificador2 }) => {
+const DetailsPlanetas = () => {
   const { store } = useContext(Context);
+  const params = useParams();
   return (
     <>
       <div className="card mb-3" style={estiloDiv}>
@@ -43,7 +45,7 @@ const DetailsPlanetas = ({ identificador2 }) => {
           <div className="col-md-4">
             <div className="card-body">
               <h5 className="card-title">
-                {store?.planetas.results[identificador2].name}
+                {store?.planetas.results[params.index].name}
               </h5>
               <p className="card-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
@@ -60,7 +62,7 @@ const DetailsPlanetas = ({ identificador2 }) => {
               <div className="col-12">
                 <h5>Rotation Period</h5>
                 <div>
-                  {store?.planetas?.results[identificador2].rotation_period}
+                  {store?.planetas?.results[params.index].rotation_period}
                 </div>
               </div>
             </div>
@@ -68,26 +70,26 @@ const DetailsPlanetas = ({ identificador2 }) => {
               <div className="col-12">
                 <h5>Orbital Period</h5>
                 <div>
-                  {store?.planetas?.results[identificador2].orbital_period}
+                  {store?.planetas?.results[params.index].orbital_period}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Diameter</h5>
-                <div>{store?.planetas?.results[identificador2].diameter}</div>
+                <div>{store?.planetas?.results[params.index].diameter}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Climate</h5>
-                <div>{store?.planetas?.results[identificador2].climate}</div>
+                <div>{store?.planetas?.results[params.index].climate}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Gravity</h5>
-                <div>{store?.planetas?.results[identificador2].gravity}</div>
+                <div>{store?.planetas?.results[params.index].gravity}</div>
               </div>
             </div>
           </div>
@@ -95,33 +97,33 @@ const DetailsPlanetas = ({ identificador2 }) => {
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Terrain</h5>
-                <div>{store?.planetas?.results[identificador2].terrain}</div>
+                <div>{store?.planetas?.results[params.index].terrain}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Surface Water</h5>
                 <div>
-                  {store?.planetas?.results[identificador2].surface_water}
+                  {store?.planetas?.results[params.index].surface_water}
                 </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Population</h5>
-                <div>{store?.planetas?.results[identificador2].population}</div>
+                <div>{store?.planetas?.results[params.index].population}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainerNaboo}>
               <div className="col-12">
                 <h5>Residents</h5>
-                <div>{store?.planetas?.results[identificador2].residents}</div>
+                <div>{store?.planetas?.results[params.index].residents}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Films</h5>
-                <div>{store?.planetas?.results[identificador2].films}</div>
+                <div>{store?.planetas?.results[params.index].films}</div>
               </div>
             </div>
           </div>

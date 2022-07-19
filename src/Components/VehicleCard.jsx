@@ -23,11 +23,10 @@ const VehicleCard = ({
   model,
   manufacturer,
   vehicle_class,
-  setIdentificador3,
   index,
 }) => {
   const [isActive, setIsActive] = useState(false);
-
+ 
   const handleClick = () => {
     setIsActive(!isActive);
   };
@@ -51,9 +50,7 @@ const VehicleCard = ({
           <div className="btns-container d-flex" style={estiloBotones2}>
             <Link
               to={`details/vehicle/${index}`}
-              className="btn btn-primary"
-              onClickCapture={() => setIdentificador3(index)}
-            >
+              className="btn btn-primary">
               Learn More!
             </Link>
             {isActive ? (

@@ -8,7 +8,15 @@ const estiloCard = {
   width: '100%',
 };
 
+
+const estiloBoton = {
+  margin: "10px"
+}
+
+const People = () => {
+=======
 const People = ({ identificador, setIdentificador }) => {
+
   const { store, actions } = useContext(Context);
   return (
     <>
@@ -38,13 +46,7 @@ const People = ({ identificador, setIdentificador }) => {
             {!!store.characters &&
               store.characters.results.length > 0 &&
               store.characters.results.map((item, i) => (
-                <PeopleCard
-                  {...item}
-                  key={item.name}
-                  index={i}
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
-                />
+                <PeopleCard {...item} key={item.name} index={i}/>
               ))}
           </div>
         </div>
