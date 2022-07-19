@@ -14,8 +14,6 @@ const PeopleCard = ({
   mass,
   gender,
   index,
-  identificador,
-  setIdentificador,
   todos,
   setTodos,
   inputValue,
@@ -88,9 +86,7 @@ const PeopleCard = ({
           <div className="btns-container d-flex">
             <Link
               to={`details/character/${index}`}
-              className="btn btn-primary"
-              onClickCapture={() => setIdentificador(index)}
-            >
+              className="btn btn-primary">
               Learn More!
             </Link>
 

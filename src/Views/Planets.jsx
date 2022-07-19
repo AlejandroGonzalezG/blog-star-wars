@@ -10,7 +10,7 @@ const estiloBoton = {
   margin: "10px"
 }
 
-const Planets = ({identificador2, setIdentificador2}) => {
+const Planets = () => {
 
   const { store, actions } = useContext(Context);
 
@@ -42,7 +42,7 @@ const Planets = ({identificador2, setIdentificador2}) => {
               !!store.planetas &&
               store.planetas.results.length > 0 &&
               store.planetas.results.map((item, i) => (
-                <PlanetsCard {...item} key={item.name} index={i} identificador2={identificador2} setIdentificador2={setIdentificador2}/>
+                <PlanetsCard {...item} key={item.name} index={i}/>
               ))
             }
           </div>

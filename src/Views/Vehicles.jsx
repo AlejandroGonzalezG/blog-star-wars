@@ -8,7 +8,7 @@ const estiloCard = {
 const estiloBoton = {
   margin: "10px"
 }
-const Vehicles = ({identificador3, setIdentificador3}) => {
+const Vehicles = () => {
     const { store, actions } = useContext(Context);
     return (
         <>
@@ -38,7 +38,7 @@ const Vehicles = ({identificador3, setIdentificador3}) => {
               !!store.vehiculos &&
               store.vehiculos.results.length > 0 &&
               store.vehiculos.results.map((item, i) => (
-                <VehicleCard {...item} key={item.name} index={i} identificador3={identificador3} setIdentificador3={setIdentificador3}/>
+                <VehicleCard {...item} key={item.name} index={i}/>
               ))
             }
           </div>

@@ -11,15 +11,9 @@ const Home = ({
   todos,
   setTodos,
   inputValue,
-  setInputValue,
-  identificador,
-  setIdentificador,
-  identificador2,
-  setIdentificador2,
-  identificador3,
-  setIdentificador3,
-  isDeleteActive,
-  setIsDeleteActive,
+
+  setInputValue
+
 }) => {
   const { store, actions } = useContext(Context);
   // Events functions
@@ -59,8 +53,6 @@ const Home = ({
                   {...item}
                   key={item.name}
                   index={i}
-                  identificador={identificador}
-                  setIdentificador={setIdentificador}
                   inputValue={inputValue}
                   setInputValue={setInputValue}
                   todos={todos}
@@ -90,8 +82,6 @@ const Home = ({
                   {...item}
                   key={item.name}
                   index={i}
-                  identificador3={identificador3}
-                  setIdentificador3={setIdentificador3}
                 />
               ))}
         </div>
@@ -113,8 +103,6 @@ const Home = ({
                   {...item}
                   key={item.name}
                   index={i}
-                  identificador2={identificador2}
-                  setIdentificador2={setIdentificador2}
                 />
               ))}
         </div>

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import PeopleCard from '../Components/PeopleCard.jsx';
 import { Context } from '../store/appContext';
 
@@ -21,6 +22,7 @@ const estiloContainer2 = {
 
 const DetailsPeople = ({ identificador }) => {
   const { store } = useContext(Context);
+  const params = useParams();
   return (
     <>
       <div className="card mb-3" style={estiloDiv}>
@@ -35,7 +37,7 @@ const DetailsPeople = ({ identificador }) => {
           <div className="col-md-4">
             <div className="card-body">
               <h5 className="card-title">
-                {store?.characters?.results[identificador].name}
+                {store?.characters?.results[params.index].name}
               </h5>
               <p className="card-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
@@ -52,9 +54,9 @@ const DetailsPeople = ({ identificador }) => {
               <div className="col-12">
                 <h5>Dimensions</h5>
                 <div>
-                  Height: {store?.characters?.results[identificador].height}{' '}
+                  Height: {store?.characters?.results[params.index].height}{' '}
                   <br></br>
-                  Mass: {store?.characters?.results[identificador].mass}
+                  Mass: {store?.characters?.results[params.index].mass}
                 </div>
               </div>
             </div>
@@ -63,11 +65,11 @@ const DetailsPeople = ({ identificador }) => {
                 <h5>Physical characteristics</h5>
                 <div>
                   Hair Color:{' '}
-                  {store?.characters?.results[identificador].hair_color} <br></br>
+                  {store?.characters?.results[params.index].hair_color} <br></br>
                   Skin Color:{' '}
-                  {store?.characters?.results[identificador].skin_color} <br></br>
+                  {store?.characters?.results[params.index].skin_color} <br></br>
                   Eye Color: {
-                    store?.characters?.results[identificador].eye_color
+                    store?.characters?.results[params.index].eye_color
                   }{' '}
                   <br></br>
                 </div>
@@ -76,19 +78,19 @@ const DetailsPeople = ({ identificador }) => {
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Birth Year</h5>
-                <div>{store?.characters?.results[identificador].birth_year}</div>
+                <div>{store?.characters?.results[params.index].birth_year}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>Gender</h5>
-                <div>{store?.characters?.results[identificador].gender}</div>
+                <div>{store?.characters?.results[params.index].gender}</div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer}>
               <div className="col-12">
                 <h5>HomeWorld</h5>
-                <div>{store?.characters?.results[identificador].homeworld}</div>
+                <div>{store?.characters?.results[params.index].homeworld}</div>
               </div>
             </div>
           </div>
@@ -96,25 +98,25 @@ const DetailsPeople = ({ identificador }) => {
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Films</h5>
-                <div>{store?.characters?.results[identificador].films}</div>
+                <div>{store?.characters?.results[params.index].films}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
                 <h5>Species</h5>
-                <div>{store?.characters?.results[identificador].species}</div>
+                <div>{store?.characters?.results[params.index].species}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
                 <h5>Vehicles</h5>
-                <div>{store?.characters?.results[identificador].vehicles}</div>
+                <div>{store?.characters?.results[params.index].vehicles}</div>
               </div>
             </div>
             <div className="container-category"style={estiloContainer2}>
               <div className="col-12">
                 <h5>StarShips</h5>
-                <div>{store?.characters?.results[identificador].starships}</div>
+                <div>{store?.characters?.results[params.index].starships}</div>
               </div>
             </div>
           </div>
