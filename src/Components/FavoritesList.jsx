@@ -23,7 +23,11 @@ const FavoritesList = () => {
           {!!store.favorites &&
             store.favorites.length > 0 &&
             store.favorites.map((favorite, index) => (
-              <FavoriteItem key={index} name={favorite.name} />
+              <FavoriteItem
+                key={index}
+                name={favorite.name}
+                deleteFn={actions.deleteFavorite}
+              />
             ))}
         </ul>
       </div>

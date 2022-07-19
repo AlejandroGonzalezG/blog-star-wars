@@ -60,30 +60,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           name: `${name}`,
         };
 
-        // console.log(favorite.name, favorite.index);
-
         const findFav = favorites.find(elem => elem.name === favorite.name);
         if (!findFav) {
           favorites.push(favorite);
           setStore({ favorites: favorites });
         }
-
-        console.log(favorites);
       },
       deleteFavorite: name => {
         const { favorites } = getStore(); // store.favorites = []
         const filterElem = favorites.filter(elem => elem.name !== name);
         setStore({ favorites: filterElem });
       },
-      // deleteFavorite: index => {
-      //   const store = getStore();
-      //   const aux = [...store.favorites];
-      //   aux[index] = null;
-      //   const filterElem = aux.filter(elem => elem !== null);
-      //   setStore({ favorites: filterElem });
-
-      //   // console.log(store.favorites);
-      // },
     },
   };
 };
