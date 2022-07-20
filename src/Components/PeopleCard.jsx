@@ -31,24 +31,15 @@ const PeopleCard = ({ name, height, mass, gender, index }) => {
               Learn More!
             </Link>
 
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.addFavorite(name)}
-            >
-              <i className="fa-solid fa-heart"></i>
-            </button>
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.deleteFavorite(name)}
-            >
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
+            {/* {store.favorites.includes(name) ? ( */}
 
-            {/* {isActive ? (
+            {store.liked.includes(name) ? (
               <button
                 className="btn btn-secondary"
+                // onClick={() => actions.deleteFavorite(name)}
                 onClick={() => {
-                  handleClick();
+                  actions.deleteFavorite(name);
+                  console.log(store.favorites);
                 }}
               >
                 <i className="fa-solid fa-heart"></i>
@@ -56,16 +47,86 @@ const PeopleCard = ({ name, height, mass, gender, index }) => {
             ) : (
               <button
                 className="btn btn-secondary"
-                // Add todo Item onclick of heart empty
-
+                // onClick={() => actions.addFavorite(name)}
                 onClick={() => {
-                  handleClick();
-                  addItem(name);
+                  actions.addFavorite(name);
+                  console.log(store.favorites);
                 }}
               >
                 <i className="fa-regular fa-heart"></i>
               </button>
-            )} */}
+            )}
+
+            {/* <button
+              className="btn btn-secondary"
+              onClick={() => {
+                actions.addFavorite(name);
+                console.log(store.favorites);
+              }}
+            >
+              {store.liked.includes(`${name}`) ? (
+                <i className="fa-regular fa-heart"></i>
+              ) : (
+                <i className="fa-solid fa-heart"></i>
+              )}
+            </button> */}
+            {/* 
+            <button
+              className="btn btn-secondary"
+              onClick={() => {
+                actions.addFavorite(name);
+                console.log(store.favorites);
+              }}
+            >
+              {store.liked.includes(`${name}`) ? (
+                <i className="fa-regular fa-heart"></i>
+              ) : (
+                <i className="fa-solid fa-heart"></i>
+              )}
+            </button> */}
+
+            {/* <button
+              className="btn btn-secondary"
+              // onClick={() => actions.addFavorite(name)}
+              onClick={() => {
+                actions.addFavorite(name);
+                console.log(store.favorites);
+              }}
+            >
+              <i className="fa-regular fa-heart"></i>
+            </button>
+
+            <button
+              className="btn btn-secondary"
+              // onClick={() => actions.deleteFavorite(name)}
+              onClick={() => {
+                actions.deleteFavorite(name);
+                console.log(store.favorites);
+              }}
+            >
+              <i className="fa-solid fa-heart"></i>
+            </button> */}
+
+            {/* <button
+              className="btn btn-secondary"
+              // onClick={() => actions.deleteFavorite(name)}
+              onClick={() => {
+                actions.deleteFavorite(name);
+                handleClick();
+              }}
+            >
+              <i className="fa-solid fa-heart"></i>
+            </button>
+            <button
+              className="btn btn-secondary"
+              // onClick={() => actions.addFavorite(name)}
+              onClick={() => {
+                actions.addFavorite(name);
+                handleClick();
+              }}
+            >
+              <i className="fa-regular fa-heart"></i>
+            </button> */}
           </div>
         </div>
       </div>

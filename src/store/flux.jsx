@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       planetas: null,
       vehiculos: null,
       favorites: [],
+      liked: [],
     },
     actions: {
       getCharacters: async url => {
@@ -55,6 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       addFavorite: name => {
+        const actions = getActions();
         const { favorites } = getStore(); // store.favorites = []
         const favorite = {
           name: `${name}`,
@@ -64,12 +66,28 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (!findFav) {
           favorites.push(favorite);
           setStore({ favorites: favorites });
+          actions.likedItem(name);
         }
       },
       deleteFavorite: name => {
+        const actions = getActions();
         const { favorites } = getStore(); // store.favorites = []
         const filterElem = favorites.filter(elem => elem.name !== name);
+        actions.deleteLikedItem(name);
         setStore({ favorites: filterElem });
+      },
+      likedItem: name => {
+        const store = getStore();
+        let like = name;
+        store.liked.push(like);
+      },
+      deleteLikedItem: name => {
+        const store = getStore();
+        const likedIndex = store.liked.indexOf(name);
+        const likedCopy = [...store.liked];
+        likedCopy[likedIndex] = null;
+        const filterLikes = likedCopy.filter(elem => elem !== null);
+        setStore({ liked: filterLikes });
       },
     },
   };
