@@ -1,31 +1,24 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
-
 const estiloCarta = {
-  width: "18rem",
-  margin: "5px"
-}
+  width: '18rem',
+  margin: '5px',
+};
 
 const estiloCartaCuerpo = {
-  height: "210px"
-}
+  height: '210px',
+};
 
 const estiloBotones2 = {
-  width: "254px",
-  justifyContent: "center",
-  marginTop: "none",
-  marginBottom: "15px"
-}
+  width: '254px',
+  justifyContent: 'center',
+  marginTop: 'none',
+  marginBottom: '15px',
+};
 
-const VehicleCard = ({
-  name,
-  model,
-  manufacturer,
-  vehicle_class,
-  index,
-}) => {
+const VehicleCard = ({ name, model, manufacturer, vehicle_class, index }) => {
   const { store, actions } = useContext(Context);
   return (
     <>
@@ -36,7 +29,7 @@ const VehicleCard = ({
           alt="..."
         />
         <div className="container-category">
-          <div className="card-body" style={estiloCartaCuerpo} >
+          <div className="card-body" style={estiloCartaCuerpo}>
             <h5 className="card-title">{name}</h5>
             <ul className="person-details">
               <li>Model: {model}</li>
@@ -45,23 +38,32 @@ const VehicleCard = ({
             </ul>
           </div>
           <div className="btns-container d-flex" style={estiloBotones2}>
-            <Link
-              to={`details/vehicle/${index}`}
-              className="btn btn-primary">
+            <Link to={`details/vehicle/${index}`} className="btn btn-primary">
               Learn More!
             </Link>
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.addFavorite(name)}
-            >
-              <i className="fa-solid fa-heart"></i>
-            </button>
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.deleteFavorite(name)}
-            >
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
+            {store.liked.includes(name) ? (
+              <button
+                className="btn btn-secondary"
+                // onClick={() => actions.deleteFavorite(name)}
+                onClick={() => {
+                  actions.deleteFavorite(name);
+                  console.log(store.favorites);
+                }}
+              >
+                <i className="fa-solid fa-heart"></i>
+              </button>
+            ) : (
+              <button
+                className="btn btn-secondary"
+                // onClick={() => actions.addFavorite(name)}
+                onClick={() => {
+                  actions.addFavorite(name);
+                  console.log(store.favorites);
+                }}
+              >
+                <i className="fa-regular fa-heart"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>

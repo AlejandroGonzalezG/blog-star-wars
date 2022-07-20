@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 import DetailsPeople from '../Views/DetailsPeople';
@@ -30,8 +30,6 @@ const PeopleCard = ({ name, height, mass, gender, index }) => {
             <Link to={`details/character/${index}`} className="btn btn-primary">
               Learn More!
             </Link>
-
-            {/* {store.favorites.includes(name) ? ( */}
 
             {store.liked.includes(name) ? (
               <button

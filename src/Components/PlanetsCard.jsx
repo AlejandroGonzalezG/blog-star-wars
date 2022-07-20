@@ -1,24 +1,15 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
-
 const estiloCarta = {
-  width: "18rem",
-  margin: "5px"
-}
+  width: '18rem',
+  margin: '5px',
+};
 
-const PlanetsCard = ({
-  name,
-  diameter,
-  climate,
-  population,
-  index,
-}) => {
-  const [isActive, setIsActive] = useState(false);
+const PlanetsCard = ({ name, diameter, climate, population, index }) => {
   const { store, actions } = useContext(Context);
 
-  
   return (
     <>
       <div className="card" style={estiloCarta}>
@@ -35,23 +26,33 @@ const PlanetsCard = ({
             <li>Population: {population}</li>
           </ul>
           <div className="btns-container d-flex">
-            <Link
-              to={`details/planet/${index}`}
-              className="btn btn-primary">
+            <Link to={`details/planet/${index}`} className="btn btn-primary">
               Learn More!
             </Link>
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.addFavorite(name)}
-            >
-              <i className="fa-solid fa-heart"></i>
-            </button>
-            <button
-              className="btn btn-secondary"
-              onClick={() => actions.deleteFavorite(name)}
-            >
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
+
+            {store.liked.includes(name) ? (
+              <button
+                className="btn btn-secondary"
+                // onClick={() => actions.deleteFavorite(name)}
+                onClick={() => {
+                  actions.deleteFavorite(name);
+                  console.log(store.favorites);
+                }}
+              >
+                <i className="fa-solid fa-heart"></i>
+              </button>
+            ) : (
+              <button
+                className="btn btn-secondary"
+                // onClick={() => actions.addFavorite(name)}
+                onClick={() => {
+                  actions.addFavorite(name);
+                  console.log(store.favorites);
+                }}
+              >
+                <i className="fa-regular fa-heart"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>
